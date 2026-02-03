@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2b1c45, #1a2a4f);
+  color: white;
+}
+
+/* GLASS EFFECT */
+.glass {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  margin: 20px;
+}
+
+.nav-left span {
+  margin-right: 20px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.avatar {
+  background: #5ad7ff;
+  color: black;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+/* MAIN */
+.container {
+  padding: 20px;
+}
+
+/* FEATURED */
+.featured {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  margin-bottom: 30px;
+}
+
+.featured-text {
+  max-width: 50%;
+}
+
+.featured h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.featured button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #5ad7ff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.character {
+  height: 280px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+/* BOTTOM */
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.block {
+  padding: 20px;
+}
+
+/* ARTWORKS */
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.art-card {
+  height: 90px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 14px;
+}
+
+/* TAGS */
+.tags span {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 20px;
+  margin: 6px 6px 0 0;
+  font-size: 13px;
+}
+
+/* INFO */
+.info-card {
+  background: rgba(0,0,0,0.25);
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 20px;
+  padding: 8px 14px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+/* HOVER */
+.block, .featured {
+  transition: transform .3s ease;
+}
+
+.block:hover, .featured:hover {
+  transform: translateY(-4px);
+}

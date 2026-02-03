@@ -32,38 +32,27 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     font-family: 'Anton', sans-serif; font-size: 22vw; color: rgba(0,0,0,0.03);
     z-index: -1; pointer-events: none;
 }
-
-.left-content { 
-    flex: 1.2; z-index: 5; background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(10px); padding: 35px; border-radius: 25px; border: 1px solid rgba(0,0,0,0.1);
-}
-
-.main-title { font-family: 'Anton', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.9; margin-bottom: 15px; }
-.subtitle { font-size: 1.1rem; border-left: 5px solid #e63946; padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
-.description { max-width: 500px; margin-bottom: 30px; color: #333; font-size: 0.95rem; }
-.signature { font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 25px; }
-
-.social-pill { 
-    display: inline-flex; align-items: center; gap: 10px; 
-    background: #fff; padding: 5px 15px 5px 5px; 
-    border-radius: 50px; text-decoration: none; color: #000; font-weight: 600; font-size: 0.8rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px;
-}
-.mini-avatar { width: 30px; height: 30px; border-radius: 50%; }
-
+.left-content { flex: 1; z-index: 2; }
+.main-title { font-family: 'Anton', sans-serif; font-size: clamp(3.5rem, 8vw, 6.5rem); line-height: 0.9; margin-bottom: 20px; }
+.subtitle { font-size: 1.1rem; border-left: 5px solid #e63946; padding-left: 15px; margin-bottom: 20px; }
+.description { max-width: 500px; margin-bottom: 30px; color: #444; }
+.social-pill { display: inline-flex; align-items: center; background: #fff; padding: 8px 15px; border-radius: 30px; border: 1px solid #000; text-decoration: none; color: #000; font-weight: 700; font-size: 0.8rem; margin-bottom: 30px; }
+.mini-avatar { width: 25px; height: 25px; border-radius: 50%; margin-left: 10px; }
+.signature { font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 30px; }
 .cta-buttons { display: flex; gap: 15px; }
-.btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.8rem; transition: 0.3s; text-align: center; }
-.btn-black { background: #000; color: #fff; border: 2px solid #000; }
+.btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.8rem; transition: 0.3s; }
+.btn-black { background: #000; color: #fff; }
 .btn-outline { border: 2px solid #000; color: #000; }
 
-.right-content { flex: 0.8; display: flex; justify-content: center; align-items: flex-end; z-index: 5; }
+.right-content { flex: 1; display: flex; justify-content: center; align-items: center; }
 .hero-img { 
     width: 100%; 
-    max-width: 600px; /* <--- Ubah 350px menjadi 600px atau lebih sesuai selera */
-    height: auto; 
-    filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.3)); 
-    transition: 0.3s; 
+    max-width: 600px; 
+    height: auto;
+    filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.2)); 
+    transform: scale(1.1); /* Sedikit diperbesar agar gagah */
 }
+
 /* --- SECTIONS --- */
 .section { padding: 80px 8%; border-top: 4px solid #000; background: #fff; }
 .section-title { font-family: 'Anton', sans-serif; font-size: 3.5rem; margin-bottom: 40px; text-transform: uppercase; }
@@ -114,6 +103,7 @@ footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-wei
     .left-content { width: 100%; }
     .subtitle { border-left: none; border-bottom: 4px solid #e63946; display: inline-block; padding-left: 0; padding-bottom: 5px; }
 }
+
 
 
 

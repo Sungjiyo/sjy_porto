@@ -70,3 +70,140 @@
             position: relative;
             width: 100%;
             /* UPDATE: Menghapus height tetap dan menggunakan padding-top untuk rasio 16:9 */
+            height: 0;
+            padding-top: 56.25%; /* (9 / 16) * 100 = 56.25% */
+            overflow: hidden;
+            background-size: cover; background-position: center;
+            border: 3px solid #111; transition: 0.4s; cursor: pointer;
+            text-decoration: none; display: block;
+        }
+        .card-overlay {
+            position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(0px); transition: 0.4s;
+            padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;
+        }
+        .project-card:hover { transform: translateY(-5px); border-color: #e63946; }
+        .project-card:hover .card-overlay { backdrop-filter: blur(8px); background: rgba(0, 0, 0, 0.7); }
+        .project-card h3 { font-family: 'Anton', sans-serif; font-size: 1.4rem; line-height: 1.1; margin-top: 10px; }
+        .tag { background: #e63946; color: #fff; width: fit-content; padding: 2px 8px; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; }
+
+        /* EXPERIENCE & DARK SECTION */
+        .dark { background: #111; color: #fff; }
+        .exp-item { margin-bottom: 30px; border-left: 4px solid #e63946; padding-left: 20px; }
+        .exp-item h4 { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: #e63946; }
+        
+        footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-weight: 700; background: #fff; }
+
+        @media (max-width: 900px) {
+            .hero-container { flex-direction: column; text-align: center; padding-top: 130px; }
+            .nav-links { display: none; }
+            .hero-img { max-width: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo-brand">SUNG JIYO</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home" class="hero-container">
+        <div class="left-content">
+            <h1 class="main-title">SUNG JIYO</h1>
+            <p class="subtitle">2D Animator & Character Rigging Artist</p>
+            <p class="description">
+                Halo, saya <strong>Sunariyo</strong> (Yoyo). Spesialis <strong>Toon Boom Harmony</strong> dengan pengalaman 5+ tahun di industri animasi profesional.
+            </p>
+            <div class="signature">Sung Jiyo</div>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-black">VIEW PROJECTS</a>
+                <a href="mailto:sunariyo.kumatajr@gmail.com" class="btn btn-outline">HIRE ME</a>
+            </div>
+        </div>
+        <div class="right-content">
+            <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/SJY_IC_B2F.png" alt="Sung Jiyo" class="hero-img">
+        </div>
+    </main>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">PROJECTS</h2>
+
+        <div class="category-label">MOVIES</div>
+        <div class="project-grid">
+            <a href="https://www.youtube.com/watch?v=WLNLn5sSXLU" target="_blank" class="project-card" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMjYwOTY0NTYxMF5BMl5BanBnXkFtZTgwNjE3OTk0NTM@._V1_.jpg');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Panji Tengkorak</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=L_TIfJnpBuY" target="_blank" class="project-card" style="background-image: url('https://images.tokopedia.net/img/cache/700/VqbcmM/2021/4/22/07f4e910-f703-4f93-9c87-8d277f6b987b.jpg');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Warkop DKI Kartun</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=fWmB3acKpHE" target="_blank" class="project-card" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtMGY4OC00MjhjLWEyZTctOWNmYjM2YmZlZTUyXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Si Juki: Harta Pulau Monyet</h3></div>
+            </a>
+            <a href="https://www.instagram.com/reel/DByTxKRiImh/" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/1685685637765.jfif');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Fox and Grandma</h3></div>
+            </a>
+        </div>
+
+        <div class="category-label">SERIES</div>
+        <div class="project-grid">
+            <a href="https://www.primevideo.com/-/id/detail/SEKOTENGS/0TADSVMIR9E8GTIFMKO9N2IDDT" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/hq720.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>SKOTENGS</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=POxDzScSimg" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/POxDzScSimg/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Gods Gang eps 5</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=zkJGkYtvKME" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/zkJGkYtvKME/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Gods Gang eps 6</h3></div>
+            </a>
+            <a href="https://klikfilm.com/v4/watch/109-6443" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/356px-Poster_Si_Juki_Anak_Kosan_Hotstar.webp.png');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Si Juki Anak Kosan</h3></div>
+            </a>
+            <a href="https://www.apps.disneyplus.com/id/shows/warkop-dki-kartun-the-series/1260061611?isOnboarding=true" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/IMG_20240601_121838.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Warkop DKI Kartun The Series</h3></div>
+            </a>
+        </div>
+
+        <div class="category-label">SHORT ANIMATION</div>
+        <div class="project-grid">
+            <a href="https://www.youtube.com/watch?v=SOjs9TnvNlQ" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/SOjs9TnvNlQ/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Si Juki Hari Film Nasional</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=ivYOaHnhYmE" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/ivYOaHnhYmE/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Lost in Jukiverse NFT</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=lugNfv1RP4c" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/lugNfv1RP4c/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Cheapomedia | On Set</h3></div>
+            </a>
+            <a href="https://www.instagram.com/tv/B2BwHFxhubp/" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/1685685637765.jfif');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Warkop DKI Latikusto</h3></div>
+            </a>
+        </div>
+    </section>
+
+    <section id="experience" class="section dark">
+        <h2 class="section-title">EXPERIENCE</h2>
+        <div class="exp-item">
+            <h4>Kumata Studio (2019 - Present)</h4>
+            <p>2D Animator & PIC Project. Memimpin R&D teknis pada Toon Boom Harmony.</p>
+        </div>
+        <div class="exp-item">
+            <h4>Gods Gang (2024 - 2025)</h4>
+            <p>Freelance 2D Animator. Full-scene production & Custom VFX.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sung Jiyo | sunariyo.kumatajr@gmail.com</p>
+    </footer>
+
+</body>
+</html>

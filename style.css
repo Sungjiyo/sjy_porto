@@ -29,6 +29,16 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     background-size: cover; background-position: center; background-attachment: fixed;
 }
 
+/* Cari bagian ini di style.css */
+.hero-img {
+    width: 600px; /* Ubah angka ini untuk memperbesar (misal dari 400px ke 600px) */
+    height: auto; /* Agar gambar tidak gepeng */
+    
+    /* Tambahan: Jika gambar terpotong atau posisinya lari setelah diperbesar */
+    max-width: none; /* Mencegah gambar dibatasi oleh container parent */
+    display: block;
+}
+
 /* Watermark Background */
 .watermark {
     position: absolute; 
@@ -118,3 +128,4 @@ footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-wei
     .left-content { width: 100%; }
     .subtitle { border-left: none; border-bottom: 4px solid #e63946; display: inline-block; padding-left: 0; padding-bottom: 5px; }
 }
+

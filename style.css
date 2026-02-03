@@ -36,9 +36,18 @@
     pointer-events: none; /* Agar tidak menghalangi klik pada menu */
 }
 
-/* Penyesuaian Mobile */
+/* --- RESPONSIF UNTUK HP --- */
 @media (max-width: 900px) {
-    .hero-container { flex-direction: column; align-items: center; padding-top: 100px; }
-    .hero-img { height: 60vh; width: 100%; object-fit: contain; }
-    .right-content { height: auto; flex: none; }
+    .hero-container { 
+        flex-direction: column; 
+        text-align: center;
+        padding-top: 120px;
+    }
+    .hero-img {
+        max-width: 280px; /* Lebih kecil lagi jika dibuka di HP */
+        margin-top: 30px;
+    }
+    .left-content {
+        margin-bottom: 20px;
+    }
 }

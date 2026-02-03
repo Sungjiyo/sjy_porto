@@ -1,149 +1,120 @@
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #f4f4f4;
-        color: #1a1a1a;
-        overflow-x: hidden;
-    }
+/* --- RESET & GLOBAL STYLES --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
 
-    /* NAVIGATION */
-    header {
-        width: 100%; padding: 15px 5%; position: fixed; top: 0; z-index: 100;
-        background: rgba(244, 244, 244, 0.95); backdrop-filter: blur(10px);
-        border-bottom: 2px solid #111;
-    }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo-brand { font-family: 'Anton', sans-serif; font-size: 1.8rem; letter-spacing: 2px; }
-    .nav-links { list-style: none; display: flex; gap: 15px; }
-    .nav-links a { text-decoration: none; color: #000; font-weight: 700; font-size: 0.75rem; padding: 8px 12px; transition: 0.3s; }
-    .nav-links a.active, .nav-links a:hover { background: #000; color: #fff; border-radius: 20px; }
+/* --- NAVIGATION --- */
+header {
+    width: 100%; padding: 15px 5%; position: fixed; top: 0; z-index: 100;
+    background: rgba(244, 244, 244, 0.95); backdrop-filter: blur(10px);
+    border-bottom: 2px solid #111;
+}
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo-brand { font-family: 'Anton', sans-serif; font-size: 1.8rem; letter-spacing: 2px; }
+.nav-links { list-style: none; display: flex; gap: 15px; }
+.nav-links a { text-decoration: none; color: #000; font-weight: 700; font-size: 0.75rem; padding: 8px 12px; transition: 0.3s; }
+.nav-links a.active, .nav-links a:hover { background: #000; color: #fff; border-radius: 20px; }
 
-    /* HERO SECTION (FIXED) */
-    .hero-container {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding: 120px 8% 50px;
-        position: relative;
-        overflow: hidden;
-        
-        /* Background Image */
-        background-image: linear-gradient(rgba(244, 244, 244, 0.6), rgba(244, 244, 244, 0.6)), 
-                          url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/wallpaper%20yono.png');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
+/* --- HERO SECTION --- */
+.hero-container {
+    min-height: 100vh; display: flex; align-items: center; padding: 120px 8% 50px;
+    position: relative; overflow: hidden;
+    background-image: linear-gradient(rgba(244, 244, 244, 0.6), rgba(244, 244, 244, 0.6)), 
+                      url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/solo-leveling-arise-3840x2160-24719.jpg');
+    background-size: cover; background-position: center; background-attachment: fixed;
+}
 
-    /* Watermark Style */
-    .watermark {
-        position: absolute; 
-        top: 50%; left: 50%; 
-        transform: translate(-50%, -50%);
-        font-family: 'Anton', sans-serif; 
-        font-size: 22vw; 
-        color: rgba(0,0,0,0.05);
-        z-index: 1; 
-        pointer-events: none;
-        white-space: nowrap;
-    }
+/* Watermark Background */
+.watermark {
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+    font-family: 'Anton', sans-serif; 
+    font-size: 22vw; 
+    color: rgba(0,0,0,0.05);
+    z-index: 1; 
+    pointer-events: none;
+    white-space: nowrap;
+}
 
-    .left-content { 
-        flex: 1.2; /* Lebih lebar dari kanan */
-        z-index: 5; 
-        background: rgba(255, 255, 255, 0.4); 
-        backdrop-filter: blur(10px);
-        padding: 35px;
-        border-radius: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-    }
+.left-content { 
+    flex: 1.2; z-index: 5; background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(10px); padding: 35px; border-radius: 25px; border: 1px solid rgba(0,0,0,0.1);
+}
 
-    .right-content { 
-        flex: 0.8; 
-        display: flex; 
-        justify-content: center; 
-        align-items: flex-end; /* Karakter menapak di bawah */
-        z-index: 5; 
-        height: 100%;
-    }
+.main-title { font-family: 'Anton', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.9; margin-bottom: 15px; }
+.subtitle { font-size: 1.1rem; border-left: 5px solid #e63946; padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
+.description { max-width: 500px; margin-bottom: 30px; color: #333; font-size: 0.95rem; }
+.signature { font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 25px; }
 
-    .main-title { font-family: 'Anton', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.9; margin-bottom: 15px; }
-    .subtitle { font-size: 1.1rem; border-left: 5px solid #e63946; padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
-    .description { max-width: 500px; margin-bottom: 30px; color: #333; font-size: 0.95rem; }
-    .signature { font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 25px; }
-    
-    .cta-buttons { display: flex; gap: 15px; }
-    .btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.8rem; transition: 0.3s; text-align: center; }
-    .btn-black { background: #000; color: #fff; border: 2px solid #000; }
-    .btn-outline { border: 2px solid #000; color: #000; }
+.social-pill { 
+    display: inline-flex; align-items: center; gap: 10px; 
+    background: #fff; padding: 5px 15px 5px 5px; 
+    border-radius: 50px; text-decoration: none; color: #000; font-weight: 600; font-size: 0.8rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px;
+}
+.mini-avatar { width: 30px; height: 30px; border-radius: 50%; }
 
-    .hero-img { width: 100%; max-width: 450px; height: auto; filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.3)); transition: 0.3s; }
+.cta-buttons { display: flex; gap: 15px; }
+.btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.8rem; transition: 0.3s; text-align: center; }
+.btn-black { background: #000; color: #fff; border: 2px solid #000; }
+.btn-outline { border: 2px solid #000; color: #000; }
 
-    /* PROJECTS SECTION */
-    .section { padding: 80px 8%; border-top: 4px solid #000; background: #fff; }
-    .section-title { font-family: 'Anton', sans-serif; font-size: 3.5rem; margin-bottom: 40px; text-transform: uppercase; }
-    .category-label { font-family: 'Anton', sans-serif; font-size: 1.5rem; margin: 30px 0 20px; color: #e63946; letter-spacing: 1px; }
+.right-content { flex: 0.8; display: flex; justify-content: center; align-items: flex-end; z-index: 5; }
+.hero-img { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.3)); transition: 0.3s; }
 
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
+/* --- SECTIONS --- */
+.section { padding: 80px 8%; border-top: 4px solid #000; background: #fff; }
+.section-title { font-family: 'Anton', sans-serif; font-size: 3.5rem; margin-bottom: 40px; text-transform: uppercase; }
+.category-label { font-family: 'Anton', sans-serif; font-size: 1.5rem; margin: 30px 0 20px; color: #e63946; letter-spacing: 1px; }
 
-    /* PROJECT CARD 16:9 */
-    .project-card {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* Rasio 16:9 */
-        overflow: hidden;
-        background-size: cover; background-position: center;
-        border: 3px solid #111; transition: 0.4s; cursor: pointer;
-        text-decoration: none; display: block;
-        background-color: #eee;
-    }
-    .card-overlay {
-        position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(0px); transition: 0.4s;
-        padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;
-    }
-    .project-card:hover { transform: translateY(-5px); border-color: #e63946; }
-    .project-card:hover .card-overlay { backdrop-filter: blur(8px); background: rgba(0, 0, 0, 0.7); }
-    .project-card h3 { font-family: 'Anton', sans-serif; font-size: 1.4rem; line-height: 1.1; margin-top: 10px; }
-    .tag { background: #e63946; color: #fff; width: fit-content; padding: 2px 8px; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; }
+/* --- PROJECT GRID & CARDS --- */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
 
-    /* FIX UNTUK IFRAME YOUTUBE DALAM CARD */
-    .project-card iframe {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        pointer-events: auto; /* Agar bisa diklik play */
-    }
-    /* Fix untuk konten non-background image di dalam card */
-    .project-card-content {
-        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
-    }
+.project-card {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* 16:9 Ratio */
+    overflow: hidden;
+    background-size: cover; background-position: center;
+    border: 3px solid #111; transition: 0.4s; cursor: pointer;
+    text-decoration: none; display: block;
+}
+.card-overlay {
+    position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px); transition: 0.4s;
+    padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;
+    z-index: 2;
+}
+.project-card:hover { transform: translateY(-5px); border-color: #e63946; }
+.project-card:not(.no-hover):hover .card-overlay { backdrop-filter: blur(8px); background: rgba(0, 0, 0, 0.7); }
 
-    /* EXPERIENCE & DARK SECTION */
-    .dark { background: #111; color: #fff; }
-    .exp-item { margin-bottom: 30px; border-left: 4px solid #e63946; padding-left: 20px; }
-    .exp-item h4 { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: #e63946; }
-    
-    /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .skill-box { background: rgba(255,255,255,0.1); padding: 20px; border: 1px solid #333; }
-    .skill-box h3 { font-family: 'Anton'; margin-bottom: 10px; color: #e63946; }
+.project-card h3 { font-family: 'Anton', sans-serif; font-size: 1.4rem; line-height: 1.1; margin-top: 10px; }
+.tag { background: #e63946; color: #fff; width: fit-content; padding: 2px 8px; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; }
 
-    footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-weight: 700; background: #fff; }
+/* --- EXPERIENCE & SKILLS --- */
+.dark { background: #111; color: #fff; }
+.exp-item { margin-bottom: 30px; border-left: 4px solid #e63946; padding-left: 20px; }
+.exp-item h4 { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: #e63946; }
 
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 900px) {
-        .hero-container { flex-direction: column; text-align: center; padding-top: 130px; padding-bottom: 0;}
-        .nav-links { display: none; }
-        .hero-img { max-width: 300px; margin-top: 30px; }
-        .subtitle { border-left: none; border-bottom: 3px solid #e63946; display: inline-block; padding-bottom: 5px; padding-left: 0; }
-        .skills-grid { grid-template-columns: 1fr; }
-        
-        /* Reset flex order di mobile */
-        .left-content, .right-content { flex: auto; width: 100%; }
-        .right-content { align-items: center; }
-    }
-</style>
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.skill-box { background: rgba(255,255,255,0.05); padding: 25px; border: 1px solid #333; border-radius: 10px; }
+.skill-box h3 { font-family: 'Anton', sans-serif; color: #e63946; margin-bottom: 10px; }
+
+/* --- FOOTER --- */
+footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-weight: 700; background: #fff; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .hero-container { flex-direction: column; text-align: center; padding-top: 130px; }
+    .nav-links { display: none; }
+    .hero-img { max-width: 250px; margin-top: 30px; }
+    .left-content { width: 100%; }
+    .subtitle { border-left: none; border-bottom: 4px solid #e63946; display: inline-block; padding-left: 0; padding-bottom: 5px; }
+}

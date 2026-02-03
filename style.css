@@ -1,157 +1,252 @@
-/* --- GUNAKAN CSS SEBELUMNYA, LALU TAMBAHKAN/TIMPA BAGIAN INI --- */
+/* SUNG JIYO PORTFOLIO - CLEAN VERSION
+   Style: Brutalist White with Red Accents
+*/
 
-/* Smooth Scrolling agar saat klik menu, dia meluncur ke bawah */
+/* 1. RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Penyesuaian Hero Section untuk Nama Panjang */
-.main-title {
-    font-size: 5rem; /* Sedikit dikecilkan agar 'SUNG JIYO' muat enak */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    /* Tekstur grid halus agar tidak flat */
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #1a1a1a;
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* --- SECTION BARU: PORTFOLIO GRID --- */
-.portfolio-section, .wiki-section {
-    padding: 80px 50px;
-    background-color: #f4f4f4;
-    border-top: 2px solid #000;
+/* 2. WATERMARK BACKGROUND */
+.watermark {
+    position: fixed; /* Ubah ke fixed agar tetap di belakang saat scroll */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Anton', sans-serif;
+    font-size: 25vw;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* 3. NAVIGATION */
+header {
+    width: 100%;
+    padding: 25px 5%;
+    position: fixed; /* Navigasi nempel di atas */
+    top: 0;
+    z-index: 100;
+    background: rgba(240, 240, 240, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+.nav-links li a.active, .nav-links li a:hover {
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.info-icon {
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/* 4. HERO SECTION */
+.hero-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 8%;
     position: relative;
+}
+
+.left-content {
+    flex: 1.2;
+    z-index: 2;
+}
+
+.main-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(4rem, 8vw, 7rem); /* Responsive font size */
+    line-height: 0.9;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-left: 5px solid #e63946;
+    padding-left: 15px;
+}
+
+.description {
+    max-width: 550px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.social-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.mini-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-black { background: #000; color: #fff; border: 2px solid #000; }
+.btn-outline { background: transparent; color: #000; border: 2px solid #000; }
+.btn-black:hover { background: #e63946; border-color: #e63946; }
+
+.right-content {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(20px 20px 30px rgba(0,0,0,0.2));
+}
+
+/* 5. PORTFOLIO & WIKI SECTION */
+.portfolio-section, .wiki-section {
+    padding: 100px 8%;
+    background: #fff;
+    border-top: 5px solid #000;
 }
 
 .section-title {
     font-family: 'Anton', sans-serif;
-    font-size: 3rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.section-desc {
+    font-size: 3.5rem;
     margin-bottom: 40px;
-    font-size: 1rem;
-    color: #555;
-    max-width: 600px;
 }
 
-/* Grid Layout */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
 }
 
-/* Card Style Brutalist */
 .project-card {
-    background: #fff;
-    border: 3px solid #000; /* Border tebal */
-    padding: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #000;
+    padding: 30px;
     position: relative;
+    transition: 0.3s;
+    background: #fdfdfd;
 }
 
-/* Efek Hover: Card melayang sedikit dengan bayangan kasar */
 .project-card:hover {
+    box-shadow: 12px 12px 0px #e63946;
     transform: translate(-5px, -5px);
-    box-shadow: 8px 8px 0px #000;
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-weight: 700;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.tag {
-    background: #000;
-    color: #fff;
-    padding: 2px 8px;
-    text-transform: uppercase;
 }
 
 .project-card h3 {
     font-family: 'Anton', sans-serif;
     font-size: 1.8rem;
-    line-height: 1.1;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    margin: 15px 0;
 }
 
-.card-link a {
-    text-decoration: none;
-    color: #e63946; /* Warna aksen merah */
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
-/* --- SECTION BARU: WIKI LIST --- */
+/* 6. WIKI LIST */
 .wiki-list {
     list-style: none;
-    max-width: 800px;
 }
 
 .wiki-list li {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    padding: 20px 0;
+    padding: 25px;
+    border-bottom: 2px solid #000;
 }
 
-.wiki-icon {
-    font-size: 1.5rem;
-    margin-right: 20px;
-    color: #000;
-    width: 50px;
-    text-align: center;
+.wiki-content h4 { font-family: 'Anton', sans-serif; font-size: 1.4rem; }
+
+/* 7. DECORATIVE */
+.bottom-logo {
+    position: absolute;
+    bottom: 40px;
+    right: 5%;
+    font-family: 'Anton', sans-serif;
+    color: #e63946;
+    text-align: right;
 }
 
-.wiki-content {
-    flex: 1;
-}
-
-.wiki-content h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.btn-small {
-    padding: 5px 15px;
-    border: 1px solid #000;
-    text-decoration: none;
-    color: #000;
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    transition: 0.2s;
-}
-
-.btn-small:hover {
-    background: #000;
-    color: #fff;
-}
-
-footer {
-    padding: 30px 50px;
-    border-top: 1px solid #ccc;
-    text-align: center;
-    font-size: 0.8rem;
-    font-family: 'Courier New', monospace;
-}
-
-/* Mobile Responsive Update */
-@media (max-width: 768px) {
-    .portfolio-section, .wiki-section {
-        padding: 40px 20px;
-    }
-    
-    .section-title {
-        font-size: 2.5rem;
-    }
-    
-    .main-title {
-        font-size: 3.5rem; /* Kecilkan lagi font nama di HP */
-    }
+/* 8. RESPONSIVE */
+@media (max-width: 992px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .left-content { padding-right: 0; order: 2; }
+    .right-content { order: 1; margin-bottom: 50px; }
+    .subtitle { border-left: none; border-bottom: 3px solid #e63946; padding: 0 0 10px 0; }
+    .cta-buttons { justify-content: center; }
+    .nav-links { display: none; } /* Simpelkan untuk mobile */
 }

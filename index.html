@@ -1,81 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anime Game UI</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sung Jiyo | 2D Rigger & Animator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<header class="navbar glass">
-  <div class="nav-left">
-    <span>Home</span>
-    <span>Search</span>
-    <span>Explore</span>
-  </div>
-  <div class="nav-right">
-    <div class="avatar">jw</div>
-  </div>
-</header>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#filmography">FILMOGRAPHY</a></li>
+                <li><a href="#works">ANIMATION & RIGS</a></li>
+                <li><a href="#wiki">WIKI / DOCS</a></li>
+            </ul>
+            <div class="info-icon">STATUS: OPEN FOR WORK <i class="fas fa-circle" style="color:#00ff00; font-size:10px;"></i></div>
+        </nav>
+    </header>
 
-<main class="container">
+    <main id="home" class="hero-container">
+        <div class="watermark">RIGGER</div>
 
-  <!-- FEATURED CARD -->
-  <section class="featured glass">
-    <div class="featured-text">
-      <h1>Xiao</h1>
-      <p>
-        An adeptus, under the name Alatus, and the sole surviving member
-        of the five foremost Yakshas dispatched by Morax.
-      </p>
-      <button>Read More</button>
-    </div>
+        <div class="left-content">
+            <h1 class="main-title">SUNG JIYO</h1>
+            
+            <p class="subtitle">
+                <strong>2D Character Rigger & Animator.</strong>
+            </p>
 
-    <img class="character"
-      src="https://i.imgur.com/2yaf2wb.png"
-      alt="Character">
-  </section>
+            <p class="description">
+                Halo, saya <strong>Sunariyo</strong> (teman-teman memanggil saya <strong>Yoyo</strong>).<br>
+                Dengan pengalaman <strong>5+ Tahun</strong> di industri animasi, saya menguasai seni memberikan "tulang" dan "nyawa" pada karakter 2D. Spesialisasi saya adalah menciptakan rig yang fleksibel untuk produksi animasi skala besar.
+            </p>
 
-  <!-- LOWER SECTION -->
-  <section class="bottom">
+            <a href="#" class="social-pill">
+                <i class="fab fa-artstation"></i> artstation.com/sungjiyo
+                <img src="https://ui-avatars.com/api/?name=Sung+Jiyo&background=000&color=fff" alt="avatar" class="mini-avatar">
+            </a>
 
-    <!-- ARTWORKS -->
-    <div class="block glass">
-      <h3>Artworks</h3>
-      <div class="art-grid">
-        <div class="art-card"></div>
-        <div class="art-card"></div>
-      </div>
-      <button class="ghost">View more</button>
-    </div>
+            <div class="signature">
+                Sung Jiyo
+            </div>
 
-    <!-- RECENT SEARCH -->
-    <div class="block glass">
-      <h3>Recent searches</h3>
-      <div class="tags">
-        <span>Xiao Build</span>
-        <span>Xiao Cosplay</span>
-        <span>Xiao Fanart</span>
-      </div>
-    </div>
+            <div class="cta-buttons">
+                <a href="#works" class="btn btn-black">LIHAT DEMOREEL</a>
+                <a href="mailto:email@example.com" class="btn btn-outline">KONTAK YOYO</a>
+            </div>
+        </div>
 
-    <!-- INFO -->
-    <div class="block glass">
-      <h3>Info</h3>
-      <div class="info-card">
-        <strong>Element</strong>
-        <p>Anemo</p>
-      </div>
-      <div class="info-card">
-        <strong>Region</strong>
-        <p>Liyue</p>
-      </div>
-    </div>
+        <div class="right-content">
+            <img src="https://png.pngtree.com/png-vector/20240316/ourmid/pngtree-cyberpunk-boy-anime-style-png-image_11971207.png" alt="Sung Jiyo Character" class="hero-img">
+        </div>
 
-  </section>
-</main>
+        <div class="bottom-logo">
+            <span>ANIMATION</span><br>ENGINEER
+        </div>
+    </main>
+
+    <section id="filmography" class="portfolio-section">
+        <h2 class="section-title">FILMOGRAPHY & PROJECTS</h2>
+        <p class="section-desc">Daftar produksi film dan serial animasi di mana saya terlibat sebagai Rigger/Animator.</p>
+
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="tag">FILM LAYAR LEBAR</span>
+                    <span class="year">2023</span>
+                </div>
+                <h3>THE BATTLE OF SURABAYA 2</h3>
+                <p>Lead Character Rigger. Bertanggung jawab atas rigging karakter utama dan crowd system.</p>
+                <div class="card-link"><a href="#">Lihat Detail <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="tag">SERIES TV</span>
+                    <span class="year">2022</span>
+                </div>
+                <h3>ADVENTURE OF NUSANTARA</h3>
+                <p>2D Animator & Rigger. Mengerjakan 12 Episode untuk Season 1.</p>
+                <div class="card-link"><a href="#">Lihat Detail <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header">
+                    <span class="tag">WEB SERIES</span>
+                    <span class="year">2021</span>
+                </div>
+                <h3>CYBER JAKARTA</h3>
+                <p>Technical Director untuk asset karakter dan prop rigging.</p>
+                <div class="card-link"><a href="#">Lihat Detail <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="wiki" class="wiki-section">
+        <h2 class="section-title">WIKI & CONTRIBUTIONS</h2>
+        <p class="section-desc">Kontribusi dokumentasi teknis dan ilustrasi komunitas.</p>
+
+        <ul class="wiki-list">
+            <li>
+                <span class="wiki-icon"><i class="fas fa-book"></i></span>
+                <div class="wiki-content">
+                    <h4>Toon Boom Harmony Rigging Guide</h4>
+                    <p>Penulis pendamping untuk dokumentasi internal studio tentang pipeline rigging efisien.</p>
+                </div>
+                <a href="#" class="btn-small">BACA</a>
+            </li>
+            <li>
+                <span class="wiki-icon"><i class="fas fa-pen-nib"></i></span>
+                <div class="wiki-content">
+                    <h4>Indonesian Animator Wiki</h4>
+                    <p>Kontributor artikel mengenai sejarah perkembangan 2D animasi di Indonesia (2018-2023).</p>
+                </div>
+                <a href="#" class="btn-small">KUNJUNGI</a>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sung Jiyo (Sunariyo). All Rigging Reserved.</p>
+    </footer>
 
 </body>
 </html>

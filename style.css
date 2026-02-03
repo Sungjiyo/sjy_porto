@@ -28,15 +28,9 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 
 /* Watermark Background */
 .watermark {
-    position: absolute; 
-    top: 50%; left: 50%; 
-    transform: translate(-50%, -50%);
-    font-family: 'Anton', sans-serif; 
-    font-size: 22vw; 
-    color: rgba(0,0,0,0.05);
-    z-index: 1; 
-    pointer-events: none;
-    white-space: nowrap;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: 'Anton', sans-serif; font-size: 22vw; color: rgba(0,0,0,0.03);
+    z-index: -1; pointer-events: none;
 }
 
 .left-content { 
@@ -120,6 +114,7 @@ footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-wei
     .left-content { width: 100%; }
     .subtitle { border-left: none; border-bottom: 4px solid #e63946; display: inline-block; padding-left: 0; padding-bottom: 5px; }
 }
+
 
 
 

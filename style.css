@@ -1,143 +1,157 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+/* --- GUNAKAN CSS SEBELUMNYA, LALU TAMBAHKAN/TIMPA BAGIAN INI --- */
+
+/* Smooth Scrolling agar saat klik menu, dia meluncur ke bawah */
+html {
+    scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #2b1c45, #1a2a4f);
-  color: white;
+/* Penyesuaian Hero Section untuk Nama Panjang */
+.main-title {
+    font-size: 5rem; /* Sedikit dikecilkan agar 'SUNG JIYO' muat enak */
 }
 
-/* GLASS EFFECT */
-.glass {
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 20px;
+/* --- SECTION BARU: PORTFOLIO GRID --- */
+.portfolio-section, .wiki-section {
+    padding: 80px 50px;
+    background-color: #f4f4f4;
+    border-top: 2px solid #000;
+    position: relative;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 32px;
-  margin: 20px;
+.section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-.nav-left span {
-  margin-right: 20px;
-  opacity: 0.8;
-  cursor: pointer;
+.section-desc {
+    margin-bottom: 40px;
+    font-size: 1rem;
+    color: #555;
+    max-width: 600px;
 }
 
-.avatar {
-  background: #5ad7ff;
-  color: black;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: bold;
+/* Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-/* MAIN */
-.container {
-  padding: 20px;
+/* Card Style Brutalist */
+.project-card {
+    background: #fff;
+    border: 3px solid #000; /* Border tebal */
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
 }
 
-/* FEATURED */
-.featured {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 32px;
-  margin-bottom: 30px;
+/* Efek Hover: Card melayang sedikit dengan bayangan kasar */
+.project-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 8px 8px 0px #000;
 }
 
-.featured-text {
-  max-width: 50%;
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #666;
 }
 
-.featured h1 {
-  font-size: 48px;
-  margin: 0;
+.tag {
+    background: #000;
+    color: #fff;
+    padding: 2px 8px;
+    text-transform: uppercase;
 }
 
-.featured button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #5ad7ff;
-  cursor: pointer;
-  font-weight: 600;
+.project-card h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
-.character {
-  height: 280px;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+.card-link a {
+    text-decoration: none;
+    color: #e63946; /* Warna aksen merah */
+    font-weight: 700;
+    font-size: 0.9rem;
 }
 
-/* BOTTOM */
-.bottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/* --- SECTION BARU: WIKI LIST --- */
+.wiki-list {
+    list-style: none;
+    max-width: 800px;
 }
 
-.block {
-  padding: 20px;
+.wiki-list li {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
 }
 
-/* ARTWORKS */
-.art-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+.wiki-icon {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    color: #000;
+    width: 50px;
+    text-align: center;
 }
 
-.art-card {
-  height: 90px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 14px;
+.wiki-content {
+    flex: 1;
 }
 
-/* TAGS */
-.tags span {
-  display: inline-block;
-  background: rgba(255,255,255,0.15);
-  padding: 8px 14px;
-  border-radius: 20px;
-  margin: 6px 6px 0 0;
-  font-size: 13px;
+.wiki-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-/* INFO */
-.info-card {
-  background: rgba(0,0,0,0.25);
-  padding: 12px;
-  border-radius: 12px;
-  margin-top: 10px;
+.btn-small {
+    padding: 5px 15px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: 0.2s;
 }
 
-.ghost {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: white;
-  border-radius: 20px;
-  padding: 8px 14px;
-  margin-top: 14px;
-  cursor: pointer;
+.btn-small:hover {
+    background: #000;
+    color: #fff;
 }
 
-/* HOVER */
-.block, .featured {
-  transition: transform .3s ease;
+footer {
+    padding: 30px 50px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'Courier New', monospace;
 }
 
-.block:hover, .featured:hover {
-  transform: translateY(-4px);
+/* Mobile Responsive Update */
+@media (max-width: 768px) {
+    .portfolio-section, .wiki-section {
+        padding: 40px 20px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .main-title {
+        font-size: 3.5rem; /* Kecilkan lagi font nama di HP */
+    }
 }

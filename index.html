@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* =========================================
-           INI CSS-NYA MAS (DESAIN WEBSITE)
-           ========================================= */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
@@ -33,100 +30,68 @@
         .nav-links a { text-decoration: none; color: #000; font-weight: 700; font-size: 0.75rem; padding: 8px 12px; transition: 0.3s; }
         .nav-links a.active, .nav-links a:hover { background: #000; color: #fff; border-radius: 20px; }
 
-        /* HERO SECTION DENGAN BACKGROUND CUSTOM */
+        /* HERO SECTION */
         .hero-container {
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            padding: 120px 8% 50px;
-            position: relative;
-            overflow: hidden;
+            min-height: 100vh; display: flex; align-items: center; padding: 120px 8% 50px;
+            position: relative; overflow: hidden;
             background-image: linear-gradient(rgba(244, 244, 244, 0.6), rgba(244, 244, 244, 0.6)), 
-                              url('https://github.com/Sungjiyo/sjy_porto/blob/main/solo-leveling-arise-3840x2160-24719.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .watermark {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            font-family: 'Anton', sans-serif; font-size: 22vw; color: rgba(0,0,0,0.03);
-            z-index: 1; pointer-events: none;
+                              url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/wallpaper%20yono.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
 
         .left-content { 
-            flex: 1.2; 
-            z-index: 5; 
-            background: rgba(255, 255, 255, 0.4); 
-            backdrop-filter: blur(10px);
-            padding: 35px;
-            border-radius: 25px;
-            border: 1px solid rgba(0,0,0,0.1);
+            flex: 1.2; z-index: 5; background: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: blur(10px); padding: 35px; border-radius: 25px; border: 1px solid rgba(0,0,0,0.1);
         }
 
         .main-title { font-family: 'Anton', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.9; margin-bottom: 15px; }
         .subtitle { font-size: 1.1rem; border-left: 5px solid #e63946; padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
         .description { max-width: 500px; margin-bottom: 30px; color: #333; font-size: 0.95rem; }
-        
-        .social-pill { display: inline-flex; align-items: center; background: #fff; padding: 8px 15px; border-radius: 30px; border: 1px solid #000; text-decoration: none; color: #000; font-weight: 700; font-size: 0.8rem; margin-bottom: 30px; }
-        .mini-avatar { width: 25px; height: 25px; border-radius: 50%; margin-left: 10px; }
         .signature { font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 25px; }
-
+        
         .cta-buttons { display: flex; gap: 15px; }
         .btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.8rem; transition: 0.3s; text-align: center; }
         .btn-black { background: #000; color: #fff; border: 2px solid #000; }
-        .btn-black:hover { background: #e63946; border-color: #e63946; }
         .btn-outline { border: 2px solid #000; color: #000; }
 
         .right-content { flex: 0.8; display: flex; justify-content: center; align-items: flex-end; z-index: 5; }
-        
-        /* REVISI UKURAN KARAKTER MAS YOYO */
-        .hero-img { 
-            width: 100%; 
-            max-width: 380px; 
-            height: auto;
-            filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.3)); 
-            transition: transform 0.3s ease;
-        }
-        .hero-img:hover { transform: scale(1.05); }
+        .hero-img { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.3)); transition: 0.3s; }
 
-        /* SECTIONS GENERAL */
+        /* PROJECTS SECTION */
         .section { padding: 80px 8%; border-top: 4px solid #000; background: #fff; }
         .section-title { font-family: 'Anton', sans-serif; font-size: 3.5rem; margin-bottom: 40px; text-transform: uppercase; }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .category-label { font-family: 'Anton', sans-serif; font-size: 1.5rem; margin: 30px 0 20px; color: #e63946; letter-spacing: 1px; }
 
-        /* PROJECT CARDS */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
+
+        /* PROJECT CARD - CLICKABLE */
         .project-card {
-            position: relative; height: 400px; overflow: hidden;
+            position: relative; height: 350px; overflow: hidden;
             background-size: cover; background-position: center;
-            border: 3px solid #111; transition: 0.4s;
+            border: 3px solid #111; transition: 0.4s; cursor: pointer;
+            text-decoration: none; display: block;
         }
         .card-overlay {
-            position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(1px); transition: 0.4s;
-            padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;
+            position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(0px); transition: 0.4s;
+            padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;
         }
+        .project-card:hover { transform: translateY(-5px); border-color: #e63946; }
         .project-card:hover .card-overlay { backdrop-filter: blur(8px); background: rgba(0, 0, 0, 0.7); }
-        .project-card h3 { font-family: 'Anton', sans-serif; font-size: 1.8rem; margin-top: 10px; }
-        .tag { background: #e63946; color: #fff; width: fit-content; padding: 3px 10px; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; }
+        .project-card h3 { font-family: 'Anton', sans-serif; font-size: 1.4rem; line-height: 1.1; margin-top: 10px; }
+        .tag { background: #e63946; color: #fff; width: fit-content; padding: 2px 8px; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; }
 
-        /* DARK SECTION */
+        /* EXPERIENCE & DARK SECTION */
         .dark { background: #111; color: #fff; }
-        .exp-item { margin-bottom: 40px; border-left: 4px solid #e63946; padding-left: 20px; }
-        .exp-item h4 { font-family: 'Anton', sans-serif; font-size: 1.6rem; color: #e63946; margin-bottom: 5px; }
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .skill-box h3 { font-family: 'Anton', sans-serif; font-size: 2rem; margin-bottom: 15px; border-bottom: 2px solid #e63946; display: inline-block; }
+        .exp-item { margin-bottom: 30px; border-left: 4px solid #e63946; padding-left: 20px; }
+        .exp-item h4 { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: #e63946; }
+        
+        footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-weight: 700; background: #fff; }
 
-        footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-weight: 700; font-size: 0.85rem; background: #fff; }
-
-        /* RESPONSIVE */
         @media (max-width: 900px) {
             .hero-container { flex-direction: column; text-align: center; padding-top: 130px; }
             .nav-links { display: none; }
-            .right-content { margin-top: 30px; }
-            .hero-img { max-width: 280px; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .cta-buttons { justify-content: center; }
+            .hero-img { max-width: 250px; }
         }
     </style>
 </head>
@@ -146,40 +111,75 @@
     </header>
 
     <main id="home" class="hero-container">
-        <div class="watermark">RIGGER</div>
         <div class="left-content">
             <h1 class="main-title">SUNG JIYO</h1>
             <p class="subtitle">2D Animator & Character Rigging Artist</p>
             <p class="description">
-                Halo, saya <strong>Sunariyo</strong> (Yoyo). Spesialis <strong>Toon Boom Harmony</strong> dengan pengalaman 5+ tahun. Ahli dalam menciptakan 2D character rig yang kompleks.
+                Halo, saya <strong>Sunariyo</strong> (Yoyo). Spesialis <strong>Toon Boom Harmony</strong> dengan pengalaman 5+ tahun di industri animasi profesional.
             </p>
-            <a href="https://www.linkedin.com/in/sunariyo-yoyo" target="_blank" class="social-pill">
-                <i class="fab fa-linkedin"></i> linkedin.com/in/sunariyo-yoyo
-                <img src="https://ui-avatars.com/api/?name=Sunariyo&background=000&color=fff" alt="avatar" class="mini-avatar">
-            </a>
             <div class="signature">Sung Jiyo</div>
             <div class="cta-buttons">
-                <a href="https://youtu.be/MI6Lwv83UXs" target="_blank" class="btn btn-black">WATCH SHOWREEL</a>
-                <a href="mailto:sunariyo.kumatajr@gmail.com" class="btn btn-outline">HIRE YOYO</a>
+                <a href="#projects" class="btn btn-black">VIEW PROJECTS</a>
+                <a href="mailto:sunariyo.kumatajr@gmail.com" class="btn btn-outline">HIRE ME</a>
             </div>
         </div>
         <div class="right-content">
-            <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/SJY_IC_B2F.png" alt="Sung Jiyo Character" class="hero-img">
+            <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/SJY_IC_B2F.png" alt="Sung Jiyo" class="hero-img">
         </div>
     </main>
 
     <section id="projects" class="section">
-        <h2 class="section-title">KEY PROJECTS</h2>
+        <h2 class="section-title">PROJECTS</h2>
+
+        <div class="category-label">MOVIES</div>
         <div class="project-grid">
-            <div class="project-card" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtMGY4OC00MjhjLWEyZTctOWNmYjM2YmZlZTUyXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg');">
-                <div class="card-overlay"><span class="tag">FEATURE FILM</span><h3>Si Juki: Harta Pulau Monyet</h3></div>
-            </div>
-            <div class="project-card" style="background-image: url('https://images.tokopedia.net/img/cache/700/VqbcmM/2021/4/22/07f4e910-f703-4f93-9c87-8d277f6b987b.jpg');">
-                <div class="card-overlay"><span class="tag">SERIES</span><h3>Warkop DKI Kartun</h3></div>
-            </div>
-            <div class="project-card" style="background-image: url('https://i.ytimg.com/vi/MI6Lwv83UXs/maxresdefault.jpg');">
-                <div class="card-overlay"><span class="tag">SERIES</span><h3>Gods Gang</h3></div>
-            </div>
+            <a href="https://www.youtube.com/watch?v=WLNLn5sSXLU" target="_blank" class="project-card" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMjYwOTY0NTYxMF5BMl5BanBnXkFtZTgwNjE3OTk0NTM@._V1_.jpg');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Panji Tengkorak</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=L_TIfJnpBuY" target="_blank" class="project-card" style="background-image: url('https://images.tokopedia.net/img/cache/700/VqbcmM/2021/4/22/07f4e910-f703-4f93-9c87-8d277f6b987b.jpg');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Warkop DKI Kartun</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=fWmB3acKpHE" target="_blank" class="project-card" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtMGY4OC00MjhjLWEyZTctOWNmYjM2YmZlZTUyXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Si Juki: Harta Pulau Monyet</h3></div>
+            </a>
+            <a href="https://www.instagram.com/reel/DByTxKRiImh/" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/1685685637765.jfif');">
+                <div class="card-overlay"><span class="tag">Movie</span><h3>Fox and Grandma</h3></div>
+            </a>
+        </div>
+
+        <div class="category-label">SERIES</div>
+        <div class="project-grid">
+            <a href="https://www.primevideo.com/-/id/detail/SEKOTENGS/0TADSVMIR9E8GTIFMKO9N2IDDT" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/hq720.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>SKOTENGS</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=POxDzScSimg" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/POxDzScSimg/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Gods Gang eps 5</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=zkJGkYtvKME" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/zkJGkYtvKME/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Gods Gang eps 6</h3></div>
+            </a>
+            <a href="https://klikfilm.com/v4/watch/109-6443" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/356px-Poster_Si_Juki_Anak_Kosan_Hotstar.webp.png');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Si Juki Anak Kosan</h3></div>
+            </a>
+            <a href="https://www.apps.disneyplus.com/id/shows/warkop-dki-kartun-the-series/1260061611?isOnboarding=true" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/IMG_20240601_121838.jpg');">
+                <div class="card-overlay"><span class="tag">Series</span><h3>Warkop DKI Kartun The Series</h3></div>
+            </a>
+        </div>
+
+        <div class="category-label">SHORT ANIMATION</div>
+        <div class="project-grid">
+            <a href="https://www.youtube.com/watch?v=SOjs9TnvNlQ" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/SOjs9TnvNlQ/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Si Juki Hari Film Nasional</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=ivYOaHnhYmE" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/ivYOaHnhYmE/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Lost in Jukiverse NFT</h3></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=lugNfv1RP4c" target="_blank" class="project-card" style="background-image: url('https://i.ytimg.com/vi/lugNfv1RP4c/maxresdefault.jpg');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Cheapomedia | On Set</h3></div>
+            </a>
+            <a href="https://www.instagram.com/tv/B2BwHFxhubp/" target="_blank" class="project-card" style="background-image: url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/1685685637765.jfif');">
+                <div class="card-overlay"><span class="tag">Short</span><h3>Warkop DKI Latikusto</h3></div>
+            </a>
         </div>
     </section>
 
@@ -187,39 +187,11 @@
         <h2 class="section-title">EXPERIENCE</h2>
         <div class="exp-item">
             <h4>Kumata Studio (2019 - Present)</h4>
-            <p>2D Animator & PIC. Memimpin strategi tim dan R&D teknis pada Toon Boom Harmony.</p>
+            <p>2D Animator & PIC Project. Memimpin R&D teknis pada Toon Boom Harmony.</p>
         </div>
         <div class="exp-item">
             <h4>Gods Gang (2024 - 2025)</h4>
             <p>Freelance 2D Animator. Full-scene production & Custom VFX.</p>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section">
-        <h2 class="section-title">PORTFOLIO</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <iframe width="100%" height="250" src="https://www.youtube.com/embed/MI6Lwv83UXs" frameborder="0" allowfullscreen></iframe>
-                <div style="padding:15px; background:#000; color:#fff;"><h3>Showreel 2024</h3></div>
-            </div>
-            <div class="project-card" style="background-color:#eee; display:flex; align-items:center; justify-content:center;">
-                <div style="font-family:'Anton'; font-size:2.5rem;">SUNG JIYO</div>
-                <div class="card-overlay"><span class="tag">DESIGN</span><h3>Logo Identity</h3></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section dark">
-        <h2 class="section-title">SKILLS & WIKI</h2>
-        <div class="skills-grid">
-            <div class="skill-box">
-                <h3>Technical Tools</h3>
-                <p>Toon Boom Harmony, Adobe Photoshop, Spreadsheet Automation.</p>
-            </div>
-            <div class="skill-box">
-                <h3>Wiki Contributions</h3>
-                <p>Editor: <a href="https://liquipedia.net/statistics/?view=userdetails&wiki=freefire&username=Yoyo09" target="_blank" style="color:#e63946;">Liquipedia</a> & <a href="https://imerp.fandom.com/wiki/User:Sun_Ji_Yo" target="_blank" style="color:#e63946;">Fandom</a>.</p>
-            </div>
         </div>
     </section>
 

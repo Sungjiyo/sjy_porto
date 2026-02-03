@@ -2,10 +2,11 @@
 .hero-container {
     min-height: 100vh;
     display: flex;
-    align-items: flex-end; /* Menjaga konten menempel ke bawah */
+    align-items: stretch; /* Ubah ke stretch agar konten mengisi tinggi container */
     justify-content: space-between;
-    padding: 0 8%; /* Hapus padding top berlebih agar gambar bisa lebih tinggi */
+    padding: 0 8%;
     position: relative;
+    overflow: hidden; /* Mencegah gambar keluar dari section */
     background-image: linear-gradient(rgba(244, 244, 244, 0.7), rgba(244, 244, 244, 0.7)), 
                       url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/main/solo-leveling-arise-3840x2160-24719.jpg');
     background-size: cover;
@@ -15,25 +16,26 @@
 .left-content { 
     flex: 1;
     z-index: 10;
-    padding-bottom: 10vh; /* Mengatur posisi teks agar tidak terlalu bawah */
-    align-self: center; /* Teks tetap di tengah secara vertikal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Teks tetap di tengah secara vertikal */
+    padding-right: 20px;
 }
 
 .right-content { 
-    flex: 1.5; /* Memberikan ruang lebih besar untuk karakter */
+    flex: 1.2; /* Sedikit dikecilkan agar teks punya ruang */
     display: flex; 
     justify-content: flex-end; 
-    align-items: flex-end; 
-    height: 100vh; /* Memastikan area gambar setinggi layar */
+    align-items: flex-end; /* Karakter menempel ke bawah */
 }
 
 .hero-img { 
-    height: 95vh; /* Ukuran karakter hampir setinggi layar */
-    width: auto; /* Lebar otomatis mengikuti tinggi agar tidak distorsi */
-    max-width: none; /* Hapus batasan lebar default */
-    filter: drop-shadow(-20px 0px 50px rgba(0,0,0,0.3));
+    height: 90vh; /* Sedikit ruang agar tidak benar-benar mepet atas */
+    width: auto;
     object-fit: contain;
-    pointer-events: none; /* Agar tidak menghalangi klik pada menu */
+    filter: drop-shadow(-20px 0px 50px rgba(0,0,0,0.3));
+    pointer-events: none;
+    transition: transform 0.3s ease;
 }
 
 /* --- RESPONSIF UNTUK HP --- */
@@ -41,13 +43,26 @@
     .hero-container { 
         flex-direction: column; 
         text-align: center;
-        padding-top: 120px;
+        padding-top: 100px;
+        align-items: center;
+        justify-content: flex-start;
     }
-    .hero-img {
-        max-width: 280px; /* Lebih kecil lagi jika dibuka di HP */
-        margin-top: 30px;
-    }
+    
     .left-content {
+        flex: none;
         margin-bottom: 20px;
+        padding-right: 0;
+    }
+
+    .right-content {
+        flex: 1;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .hero-img {
+        height: 60vh; /* Di HP, jangan terlalu tinggi agar teks tidak tenggelam */
+        max-width: 90%;
     }
 }

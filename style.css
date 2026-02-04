@@ -20,7 +20,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .nav-links a { text-decoration: none; color: #000; font-weight: 700; font-size: 0.75rem; padding: 8px 12px; transition: 0.3s; }
 .nav-links a.active, .nav-links a:hover { background: #000; color: #fff; border-radius: 20px; }
 
-/* HERO SECTION DENGAN LATAR BELAKANG ANIME */
+/* --- HERO SECTION REVISED --- */
 .hero-container {
     min-height: 100vh; 
     display: flex; 
@@ -28,44 +28,68 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     padding: 100px 8% 50px;
     position: relative;
     
-    /* GANTI LINK DI BAWAH INI UNTUK GANTI GAMBAR LATAR */
+    /* Background tetap sama */
     background-image: linear-gradient(rgba(244, 244, 244, 0.7), rgba(244, 244, 244, 0.7)), 
                       url('https://raw.githubusercontent.com/Sungjiyo/sjy_porto/refs/heads/main/solo-leveling-arise-3840x2160-24719.jpg'); 
-    
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Membuat efek parallax keren saat scroll */
+    background-attachment: fixed;
+    overflow: hidden; /* Mencegah pedang keluar dari layar */
 }
 
-/* Watermark dibuat sedikit lebih tebal agar tetap kelihatan di atas background */
-.watermark {
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    font-family: 'Anton', sans-serif; 
-    font-size: 22vw; 
-    color: rgba(0,0,0,0.05);
-    z-index: 1; 
-    pointer-events: none;
-}
-
-/* Pastikan konten teks di atas background */
+/* Kotak teks dibuat melayang (Absolute) agar bisa menimpa gambar */
 .left-content { 
-    flex: 1; 
-    z-index: 5; 
-    background: rgba(255, 255, 255, 0.2); /* Efek kaca tipis agar teks mudah dibaca */
-    backdrop-filter: blur(5px);
-    padding: 20px;
+    position: absolute; /* Mengubah dari flex menjadi absolute */
+    left: 8%;           /* Jarak dari kiri */
+    max-width: 400px;   /* Batasi lebar agar tidak menutupi seluruh layar */
+    z-index: 10;        /* Pastikan di atas gambar */
+    background: rgba(255, 255, 255, 0.6); /* Sedikit lebih tebal agar teks terbaca jelas */
+    backdrop-filter: blur(10px);
+    padding: 30px;
     border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* Area gambar dibuat memenuhi layar di belakang teks */
 .right-content { 
-    flex: 1; 
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     display: flex; 
-    justify-content: center; 
+    justify-content: flex-end; /* Gambar merapat ke kanan */
     align-items: center; 
-    z-index: 5; 
+    z-index: 5; /* Di bawah teks (left-content) */
+}
+
+/* Atur ukuran gambar karakter agar tidak merusak layout */
+.right-content img {
+    height: 90vh;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 900px) {
+    .hero-container { 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+    .left-content { 
+        position: relative; /* Kembali ke posisi normal di HP */
+        left: 0;
+        width: 90%;
+        margin-top: 50px;
+    }
+    .right-content {
+        position: relative;
+        height: 300px;
+        order: -1; /* Gambar di atas teks saat di HP */
+    }
 }
 
 /* --- SECTIONS --- */
@@ -118,6 +142,7 @@ footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-wei
     .left-content { width: 100%; }
     .subtitle { border-left: none; border-bottom: 4px solid #e63946; display: inline-block; padding-left: 0; padding-bottom: 5px; }
 }
+
 
 
 

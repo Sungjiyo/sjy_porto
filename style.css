@@ -86,3 +86,4 @@ footer { padding: 40px; text-align: center; border-top: 1px solid #111; font-wei
     .skills-grid { grid-template-columns: 1fr; }
     .cta-buttons { justify-content: center; }
 }
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+z<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -249,28 +249,30 @@
             </div>
         </div>
 <div class="category-label">PERSONAL PROJECT</div>
-        
-        <div class="personal-slider-wrapper">
-            <div class="slide-track" id="track-logo">
-                <div class="slide-item">
-                    <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/refs/heads/main/LOGO_B2F_2.0_v3.png" alt="B2F 2.0 Logo">
-                </div>
-                <div class="slide-item">
-                    <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/refs/heads/main/LOGO_B2F_2.0_v3.png" alt="B2F 2.0 Logo">
-                </div>
-                <div class="slide-item">
-                    <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/refs/heads/main/LOGO_B2F_2.0_v3.png" alt="B2F 2.0 Logo">
-                </div>
-            </div>
-
-            <button class="slide-nav prev" onclick="moveSlide('track-logo', -1)">&#10094;</button>
-            <button class="slide-nav next" onclick="moveSlide('track-logo', 1)">&#10095;</button>
-
-            <div class="slide-info">
-                <span class="tag">DESIGN</span>
-                <h3>Logo Identity</h3>
-            </div>
+<div class="project-grid">
+    <div class="project-card personal-item" onclick="rotateImage(this)">
+        <div class="personal-image-stack">
+            <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/refs/heads/main/LOGO_B2F_2.0_v3.png" class="active" alt="Logo 1">
+            <img src="https://via.placeholder.com/600x337/e63946/ffffff?text=Logo+Identity+B" alt="Logo 2">
+            <img src="https://via.placeholder.com/600x337/111111/ffffff?text=Logo+Identity+C" alt="Logo 3">
         </div>
+        <div class="card-overlay">
+            <span class="tag">Design</span>
+            <h3>Logo Identity</h3>
+            <small style="font-size: 0.6rem; opacity: 0.8;">Click to switch view</small>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="personal-image-stack">
+            <img src="https://via.placeholder.com/600x337/333/eee?text=Other+Work" class="active">
+        </div>
+        <div class="card-overlay">
+            <span class="tag">Design</span>
+            <h3>Branding Project</h3>
+        </div>
+    </div>
+</div>
      
     </section>
 
@@ -294,6 +296,7 @@
 
 </body>
 </html>
+
 
 
 

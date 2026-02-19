@@ -248,10 +248,23 @@
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/MI6Lwv83UXs" frameborder="0" allowfullscreen style="position: absolute; top:0; left:0;"></iframe>
             </div>
         </div>
-        <div class="category-label">PERSONAL PROJECT</div>
-            <div class="project-card" style="background-color:#eee; display:flex; align-items:center; justify-content:center; aspect-ratio: 1 / 1; overflow: hidden;">
-               <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/refs/heads/main/LOGO_B2F_2.0_v3.png" alt="B2F 2.0 Logo" style="width:100%; height:100%; object-fit:cover;">
-               <div class="card-overlay"><span class="tag">DESIGN</span><h3>Logo Identity</h3></div>
+<div class="category-label">PERSONAL PROJECT</div>
+        <div class="project-grid">
+            <div class="slider-container" style="position: relative; width: 100%; padding-top: 100%; overflow: hidden; border: 3px solid #111; background-color: #eee;">
+                
+                <div class="slider-images" id="slider-logo">
+                    <img src="https://raw.githubusercontent.com/Sungjiyo/sjy_porto/refs/heads/main/LOGO_B2F_2.0_v3.png" alt="B2F 2.0 Logo 1">
+                    <img src="https://via.placeholder.com/500/e63946/ffffff?text=Logo+Variant+2" alt="B2F 2.0 Logo 2">
+                    <img src="https://via.placeholder.com/500/111111/ffffff?text=Logo+Variant+3" alt="B2F 2.0 Logo 3">
+                </div>
+
+                <button class="slider-btn prev-btn" onclick="moveSlide(-1, 'slider-logo')">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="moveSlide(1, 'slider-logo')">&#10095;</button>
+
+                <div class="card-overlay" style="pointer-events: none; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%); padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;">
+                    <span class="tag" style="pointer-events: auto;">DESIGN</span>
+                    <h3 style="font-family: 'Anton', sans-serif; margin-top: 10px;">Logo Identity</h3>
+                </div>
             </div>
         </div>
      
@@ -277,5 +290,6 @@
 
 </body>
 </html>
+
 
 

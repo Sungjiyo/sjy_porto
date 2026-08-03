@@ -1,134 +1,147 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SUNARIYO | 2D Animation Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>SUNARIYO | 2D Animator & Rigger Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
     <div class="logo">SUNARIYO</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#releases">Releases</a></li>
-      <li><a href="#animation">Works</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#releases">Releases</a></li>
+        <li><a href="#animation">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-subtitle">Animator & Rigger</p>
-      <h1 class="hero-title">SUNG<br>JIYO</h1>
-      <p style="color: #888; margin-bottom: 40px;">Spesialisasi dalam Cut-out Animation dan Character Rigging untuk industri perfilman global.</p>
-      <a href="#animation" class="filter-btn" style="color: #fff; border-bottom: 2px solid #fff; padding-bottom: 5px; text-decoration: none;">EXPLORE WORKS</a>
+      <p style="letter-spacing: 5px; color: #ccc;">2D ANIMATOR | CHARACTER RIGGER</p>
+      <h1 class="hero-title">SUNARIYO</h1>
+      <p style="max-width: 500px; margin-top: 20px; color: #aaa;">
+        5+ years of experience in feature films and animated series. 
+        Specialized in Toon Boom Harmony workflow.
+      </p>
     </div>
   </section>
 
+  <!-- ABOUT & SKILLS (Dari CV) -->
   <section id="about" class="section">
     <div class="section-header">
-      <h2 class="section-title">THE ARTIST</h2>
+      <h2 class="section-title">PROFILE</h2>
     </div>
-    <div style="max-width: 800px; font-size: 1.2rem; color: #ccc;">
-      <p>Bekerja di persimpangan antara teknis rigging yang kompleks dan estetika animasi yang halus. Berpengalaman menangani pipeline produksi untuk proyek film layar lebar dan seri animasi original.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+      <div>
+        <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 20px;">
+          Detail-oriented 2D Animator and Character Rigger. Skilled in cut-out, traditional, and hybrid animation. 
+          Proven leadership as Person in Charge (PIC) to deliver high-quality projects on schedule.
+        </p>
+        <h3>Tools:</h3>
+        <div class="skills-container">
+          <span class="skill-tag">Toon Boom Harmony</span>
+          <span class="skill-tag">Clip Studio Paint EX</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">Blender</span>
+          <span class="skill-tag">Paint Tool SAI</span>
+        </div>
+      </div>
+      <div>
+        <h3>Key Expertise:</h3>
+        <ul style="list-style: none; color: #888; margin-top: 10px;">
+          <li>• Full Animation Pipeline (Keypose to Coloring)</li>
+          <li>• Japanese & Western Animation Pipeline</li>
+          <li>• Advanced Character Rigging</li>
+          <li>• Project Leadership (PIC)</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- OFFICIAL RELEASES -->
-  <section id="releases" class="section">
+  <!-- OFFICIAL RELEASES (Daftar Project Besar CV) -->
+  <section id="releases" class="section" style="background: #080808;">
     <div class="section-header">
       <h2 class="section-title">OFFICIAL RELEASES</h2>
     </div>
     <div class="grid-container">
-      <!-- Item 1 -->
       <div class="work-item">
-        <img src="YOUR_POSTER_1.jpg" alt="Film 1">
+        <img src="https://via.placeholder.com/800x450" alt="Si Juki">
         <div class="work-overlay">
           <small>FEATURE FILM</small>
-          <h3>PROJECT TITLE ONE</h3>
+          <h3>Si Juki The Movie: Harta Pulau Monyet</h3>
         </div>
       </div>
-      <!-- Item 2 -->
       <div class="work-item">
-        <img src="YOUR_POSTER_2.jpg" alt="Film 2">
+        <img src="https://via.placeholder.com/800x450" alt="Panji Tengkorak">
+        <div class="work-overlay">
+          <small>FEATURE FILM</small>
+          <h3>Panji Tengkorak (Movie)</h3>
+        </div>
+      </div>
+      <div class="work-item">
+        <img src="https://via.placeholder.com/800x450" alt="Warkop DKI">
         <div class="work-overlay">
           <small>SERIES</small>
-          <h3>PROJECT TITLE TWO</h3>
+          <h3>Warkop DKI Kartun</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ANIMATION SHOWCASE WITH FILTER -->
-  <section id="animation" class="section" style="background-color: #050505;">
+  <!-- WORKS / CUT ANIMATION -->
+  <section id="animation" class="section">
     <div class="section-header">
-      <h2 class="section-title">WORKS</h2>
+      <h2 class="section-title">TECHNICAL WORKS</h2>
     </div>
 
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filterObjects('all')">All</button>
       <button class="filter-btn" onclick="filterObjects('fbf')">Frame by Frame</button>
       <button class="filter-btn" onclick="filterObjects('cutout')">Cut Out</button>
-      <button class="filter-btn" onclick="filterObjects('japan')">Japanese Style</button>
+      <button class="filter-btn" onclick="filterObjects('hybrid')">Hybrid</button>
     </div>
 
     <div class="grid-container">
-      <!-- Kategori: FBF -->
+      <!-- Contoh item fbf -->
       <div class="grid-item fbf work-item">
-        <img src="FBF_IMAGE_1.jpg" alt="FBF 1">
+        <img src="https://via.placeholder.com/800x450" alt="Work">
         <div class="work-overlay"><h3>Action Sequence</h3></div>
       </div>
-      <div class="grid-item fbf work-item">
-        <img src="FBF_IMAGE_2.jpg" alt="FBF 2">
-        <div class="work-overlay"><h3>Character Acting</h3></div>
-      </div>
-
-      <!-- Kategori: Cutout -->
+      <!-- Contoh item cutout -->
       <div class="grid-item cutout work-item">
-        <img src="CO_IMAGE_1.jpg" alt="CO 1">
-        <div class="work-overlay"><h3>Character Rigging Move</h3></div>
-      </div>
-      <div class="grid-item cutout work-item">
-        <img src="CO_IMAGE_2.jpg" alt="CO 2">
-        <div class="work-overlay"><h3>Body Mechanics</h3></div>
-      </div>
-
-      <!-- Kategori: Japan -->
-      <div class="grid-item japan work-item">
-        <img src="JP_IMAGE_1.jpg" alt="JP 1">
-        <div class="work-overlay"><h3>Anime Style Cut</h3></div>
+        <img src="https://via.placeholder.com/800x450" alt="Work">
+        <div class="work-overlay"><h3>Rigging Showcase</h3></div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section" style="text-align: center;">
-    <h2 class="hero-title" style="font-size: 5vw;">LET'S TALK</h2>
-    <p>sungjiyo@email.com</p>
-    <div style="margin-top: 50px;">
-      <a href="mailto:email@kamu.com" class="filter-btn" style="font-size: 1.5rem; color: #fff;">SAY HELLO</a>
+  <!-- CONTACT -->
+  <section id="contact" class="section" style="text-align: center; background: #000;">
+    <h2 class="hero-title" style="font-size: 5vw;">CONTACT</h2>
+    <p style="margin-top: 20px; letter-spacing: 2px;">jiyo.animation@gmail.com</p>
+    <div style="margin-top: 40px;">
+      <a href="https://www.linkedin.com/in/sunariyo-yoyo" target="_blank" class="skill-tag" style="text-decoration: none; color: #fff;">LinkedIn</a>
+      <a href="mailto:jiyo.animation@gmail.com" class="skill-tag" style="text-decoration: none; color: #fff; margin-left: 10px;">Email Me</a>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2026 SUNARIYO STUDIO. ALL RIGHTS RESERVED.</p>
-  </footer>
 
   <script>
-    // Filtering Logic
     filterObjects('all');
     function filterObjects(c) {
-      var x, i;
-      x = document.getElementsByClassName("grid-item");
+      var x = document.getElementsByClassName("grid-item");
       if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
+      for (var i = 0; i < x.length; i++) {
         x[i].classList.remove("show");
         if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
       }
-      // Active Button State
       var btns = document.getElementsByClassName("filter-btn");
       for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function(){

@@ -237,4 +237,18 @@ header {
     background: linear-gradient(transparent, rgba(0,0,0,0.9));
     transition: 0.3s ease; 
   }
+
+/* Warna khusus untuk IMDb */
+.skill-tag[href*="imdb"]:hover {
+    background: #e2b616 !important;
+    color: #000 !important;
+}
+
+/* Warna khusus untuk Discord */
+.skill-tag[style*="5865F2"] {
+    transition: 0.3s;
+}
+.skill-tag[style*="5865F2"]:hover {
+    filter: brightness(1.2);
+}
 </style>

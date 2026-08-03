@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All View | Sung Jiyo</title>
+  <meta name="description" content="All View Cut Animation portfolio Sung Jiyo." />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Poppins', sans-serif;
+      background:#f4f4f4;
+      color:#111;
+      line-height:1.6;
+    }
+    a { text-decoration:none; color:inherit; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: rgba(244,244,244,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #111;
+      padding: 14px 5%;
+      z-index: 999;
+    }
+    .topbar a {
+      font-weight: 700;
+      border: 1px solid #111;
+      padding: 8px 14px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+    .section {
+      padding: 80px 5%;
+    }
+    .title {
+      font-family:'Anton', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .desc {
+      max-width: 800px;
+      color:#555;
+      margin-bottom: 30px;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #111;
+      background:#ddd;
+      border-radius: 18px;
+      aspect-ratio: 16 / 9;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-overlay {
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:18px;
+      color:#fff;
+      background: linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.1));
+    }
+    .tag {
+      display:inline-block;
+      width:fit-content;
+      background:#e63946;
+      color:#fff;
+      padding:4px 9px;
+      border-radius:6px;
+      font-size:0.68rem;
+      font-weight:700;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    .card h3 {
+      font-family:'Anton', sans-serif;
+      font-size:1.35rem;
+      text-transform:uppercase;
+    }
+    .backlink {
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="../index.html">← Kembali ke Home</a>
+  </div>
+
+  <section class="section">
+    <a class="backlink" href="../index.html#cut-animation">← Kembali ke kategori Cut Animation</a>
+    <h1 class="title">All View</h1>
+    <p class="desc">Berisi kumpulan karya terbaik untuk overview cepat.</p>
+
+    <div class="grid">
+      <a href="YOUR_ALL_VIEW_LINK_1" target="_blank" class="card" style="background-image:url('YOUR_ALL_VIEW_IMAGE_1');">
+        <div class="card-overlay">
+          <span class="tag">All View</span>
+          <h3>ALL VIEW PROJECT 1</h3>
+          <p>Deskripsi singkat project.</p>
+        </div>
+      </a>
+
+      <a href="YOUR_ALL_VIEW_LINK_2" target="_blank" class="card" style="background-image:url('YOUR_ALL_VIEW_IMAGE_2');">
+        <div class="card-overlay">
+          <span class="tag">All View</span>
+          <h3>ALL VIEW PROJECT 2</h3>
+          <p>Deskripsi singkat project.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -4,10 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sung Jiyo | 2D Animator & Rigger Portfolio</title>
-  <meta name="description" content="Portfolio Sung Jiyo - 2D Animator, 2D Rigger, Poster Film, Credit Title Screenshots, dan Cut Animation." />
-
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* CSS Tambahan untuk Filtering */
+    .filter-btn {
+      padding: 10px 20px;
+      margin: 5px;
+      border: 1px solid #333;
+      background: none;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+    .grid-item {
+      display: block; /* Default tampil */
+    }
+    .grid-item.hide {
+      display: none; /* Sembunyikan yang tidak dipilih */
+    }
+  </style>
 </head>
 <body>
 
@@ -15,171 +39,132 @@
     <nav>
       <div class="logo">SUNARIYO</div>
       <ul class="nav-links">
-        <li><a class="active" href="#home">HOME</a></li>
+        <li><a href="#home">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#posters">POSTER FILM</a></li>
-        <li><a href="#credits">CREDIT TITLE</a></li>
-        <li><a href="#cut-animation">CUT ANIMATION</a></li>
+        <li><a href="#filmography">FILMOGRAPHY</a></li>
+        <li><a href="#credits">CREDITS</a></li>
+        <li><a href="#portfolio">ANIMATION</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- HERO SECTION -->
   <main id="home" class="hero">
     <div class="hero-box">
       <h1 class="hero-title">SUNARIYO</h1>
       <p class="hero-subtitle">2D Animator & 2D Character Rigger</p>
-      <p class="hero-text">
-        Saya adalah animator 2D yang fokus pada cut animation, character rigging, dan produksi visual untuk film,
-        series, serta konten reels. Portfolio ini dibuat agar terlihat rapi, profesional, dan mudah dinavigasi.
-      </p>
       <div class="signature">Sung Jiyo</div>
       <div class="cta">
-        <a href="cut-animation/index.html" class="btn btn-black">BUKA CUT ANIMATION</a>
-        <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-outline">HIRE ME</a>
+        <a href="#portfolio" class="btn btn-black">LIHAT KARYA</a>
+        <a href="mailto:emailkamu@gmail.com" class="btn btn-outline">HIRE ME</a>
       </div>
     </div>
-
     <div class="hero-image">
-      <img src="YOUR_HERO_CHARACTER_IMAGE_URL" alt="Sung Jiyo">
+      <img src="URL_FOTO_KARAKTER_KAMU" alt="Sung Jiyo">
     </div>
   </main>
 
+  <!-- ABOUT -->
   <section id="about" class="section">
     <h2 class="section-title">ABOUT</h2>
-    <p class="section-desc">
-      Tulis profil singkat kamu di sini: spesialisasi, pengalaman, software yang dipakai, dan jenis proyek yang biasa kamu kerjakan.
-      Usahakan singkat tapi kuat.
-    </p>
-
     <div class="text-box">
-      <p><strong>Nama:</strong> Sung Jiyo</p>
-      <p><strong>Role:</strong> 2D Animator / Rigger / PIC Project</p>
-      <p><strong>Tools:</strong> Toon Boom Harmony, Photoshop, Blender, dan lainnya</p>
-      <p><strong>Fokus:</strong> Cut Out, Frame by Frame, Hybrid, Japanese Style, Reels Content</p>
+      <p>Saya adalah animator 2D yang fokus pada <strong>cut-out animation</strong> dan <strong>character rigging</strong>. Berpengalaman dalam menangani produksi film layar lebar, series, hingga konten visual untuk media sosial.</p>
+      <p><strong>Tools:</strong> Toon Boom Harmony, Photoshop, After Effects.</p>
     </div>
   </section>
 
-  <section id="posters" class="section">
-    <h2 class="section-title">POSTER FILM</h2>
-    <p class="section-desc">
-      Bagian ini khusus untuk kumpulan poster film. Gunakan hanya poster terbaik dan beri judul yang jelas.
-    </p>
-
+  <!-- FILMOGRAPHY (Dulu Poster Film) -->
+  <section id="filmography" class="section dark">
+    <h2 class="section-title">FILMOGRAPHY</h2>
+    <p class="section-desc">Kumpulan project film, series, dan animasi pendek yang telah tayang secara resmi.</p>
     <div class="grid">
-      <a href="YOUR_POSTER_LINK_1" target="_blank" class="card poster-card" style="background-image:url('YOUR_POSTER_IMAGE_1');">
+      <!-- Item 1 -->
+      <div class="card poster-card" style="background-image:url('POSTER_1');">
         <div class="card-overlay">
-          <span class="tag">Poster Film</span>
+          <span class="tag">Feature Film</span>
           <h3>JUDUL FILM 1</h3>
-          <p>Tambah keterangan singkat: role kamu, tahun, atau studio.</p>
+          <p>Role: 2D Animator (2023)</p>
         </div>
-      </a>
-
-      <a href="YOUR_POSTER_LINK_2" target="_blank" class="card poster-card" style="background-image:url('YOUR_POSTER_IMAGE_2');">
+      </div>
+      <!-- Item 2 -->
+      <div class="card poster-card" style="background-image:url('POSTER_2');">
         <div class="card-overlay">
-          <span class="tag">Poster Film</span>
-          <h3>JUDUL FILM 2</h3>
-          <p>Isi dengan poster film lain yang paling kuat.</p>
+          <span class="tag">TV Series</span>
+          <h3>JUDUL SERIES</h3>
+          <p>Role: Lead Rigger</p>
         </div>
-      </a>
-
-      <a href="YOUR_POSTER_LINK_3" target="_blank" class="card poster-card" style="background-image:url('YOUR_POSTER_IMAGE_3');">
-        <div class="card-overlay">
-          <span class="tag">Poster Film</span>
-          <h3>JUDUL FILM 3</h3>
-          <p>Tambahkan poster jika ada lebih banyak karya.</p>
-        </div>
-      </a>
+      </div>
     </div>
   </section>
 
-  <section id="credits" class="section dark">
-    <h2 class="section-title">CREDIT TITLE SCREENSHOTS</h2>
-    <p class="section-desc">
-      Bagian ini untuk kumpulan screenshot credit title. Cocok untuk menunjukkan detail kerja kamu di produksi film/series.
-    </p>
-
+  <!-- CREDIT TITLES -->
+  <section id="credits" class="section">
+    <h2 class="section-title">CREDIT TITLES</h2>
+    <p class="section-desc">Bukti keterlibatan dalam tim produksi produksi resmi.</p>
     <div class="grid">
-      <a href="YOUR_CREDIT_IMAGE_LINK_1" target="_blank" class="card wide-card" style="background-image:url('YOUR_CREDIT_IMAGE_1');">
-        <div class="card-overlay">
-          <span class="tag">Credit Title</span>
-          <h3>PROJECT CREDIT 1</h3>
-          <p>Screenshot credit title / opening / ending.</p>
-        </div>
-      </a>
-
-      <a href="YOUR_CREDIT_IMAGE_LINK_2" target="_blank" class="card wide-card" style="background-image:url('YOUR_CREDIT_IMAGE_2');">
-        <div class="card-overlay">
-          <span class="tag">Credit Title</span>
-          <h3>PROJECT CREDIT 2</h3>
-          <p>Tambahkan nama film, episode, atau tim produksi.</p>
-        </div>
-      </a>
-
-      <a href="YOUR_CREDIT_IMAGE_LINK_3" target="_blank" class="card wide-card" style="background-image:url('YOUR_CREDIT_IMAGE_3');">
-        <div class="card-overlay">
-          <span class="tag">Credit Title</span>
-          <h3>PROJECT CREDIT 3</h3>
-          <p>Bisa juga pakai thumbnail dari frame credit yang paling bagus.</p>
-        </div>
-      </a>
+      <div class="card wide-card" style="background-image:url('CREDIT_IMAGE_1');">
+        <div class="card-overlay"><h3>Movie Name Credit</h3></div>
+      </div>
+      <div class="card wide-card" style="background-image:url('CREDIT_IMAGE_2');">
+        <div class="card-overlay"><h3>Series Name Credit</h3></div>
+      </div>
     </div>
   </section>
 
-  <section id="cut-animation" class="section">
+  <!-- PORTFOLIO / CUT ANIMATION (DENGAN FILTER) -->
+  <section id="portfolio" class="section dark">
     <h2 class="section-title">CUT ANIMATION</h2>
-    <p class="section-desc">
-      Setiap kategori cut animation sudah dipisah menjadi halaman tersendiri agar portfolio lebih rapi dan mudah dinilai.
-    </p>
+    <p class="section-desc">Koleksi cut animasi berdasarkan teknik dan gaya.</p>
 
     <div class="mini-nav">
-      <a href="cut-animation/index.html">Buka Halaman Cut Animation</a>
-      <a href="cut-animation/all-view.html">All View</a>
-      <a href="cut-animation/frame-by-frame.html">Frame by Frame</a>
-      <a href="cut-animation/cut-out.html">Cut Out</a>
-      <a href="cut-animation/hybrid.html">Hybrid</a>
-      <a href="cut-animation/japanese-style.html">Japanese Style</a>
-      <a href="cut-animation/short-animation.html">Short Animation / Reels</a>
+      <button class="filter-btn active" onclick="filterSelection('all')">ALL VIEW</button>
+      <button class="filter-btn" onclick="filterSelection('frame')">FRAME BY FRAME</button>
+      <button class="filter-btn" onclick="filterSelection('cutout')">CUT OUT</button>
+      <button class="filter-btn" onclick="filterSelection('hybrid')">HYBRID</button>
+      <button class="filter-btn" onclick="filterSelection('japan')">JAPANESE STYLE</button>
+      <button class="filter-btn" onclick="filterSelection('short')">SHORT/REELS</button>
     </div>
 
     <div class="grid">
-      <a href="cut-animation/all-view.html" class="card wide-card" style="background-image:url('YOUR_ANIMATION_THUMB_1');">
-        <div class="card-overlay">
-          <span class="tag">All View</span>
-          <h3>LIHAT ALL VIEW</h3>
-          <p>Overview karya terbaik kamu.</p>
-        </div>
-      </a>
-
-      <a href="cut-animation/frame-by-frame.html" class="card wide-card" style="background-image:url('YOUR_ANIMATION_THUMB_2');">
+      <!-- Contoh Item Frame by Frame -->
+      <div class="grid-item frame card wide-card" style="background-image:url('THUMB_1');">
         <div class="card-overlay">
           <span class="tag">Frame by Frame</span>
-          <h3>LIHAT FRAME BY FRAME</h3>
-          <p>Animasi manual dengan timing dan acting kuat.</p>
+          <h3>Character Action</h3>
         </div>
-      </a>
+      </div>
 
-      <a href="cut-animation/cut-out.html" class="card wide-card" style="background-image:url('YOUR_ANIMATION_THUMB_3');">
+      <!-- Contoh Item Cut Out -->
+      <div class="grid-item cutout card wide-card" style="background-image:url('THUMB_2');">
         <div class="card-overlay">
           <span class="tag">Cut Out</span>
-          <h3>LIHAT CUT OUT</h3>
-          <p>Rigging dan animasi cut out yang rapi.</p>
+          <h3>Rigged Character Walk</h3>
         </div>
-      </a>
+      </div>
+
+      <!-- Contoh Item Japanese Style -->
+      <div class="grid-item japan card wide-card" style="background-image:url('THUMB_3');">
+        <div class="card-overlay">
+          <span class="tag">Japanese Style</span>
+          <h3>Anime Style Cut</h3>
+        </div>
+      </div>
+      
+      <!-- Tambahkan item lainnya dengan class kategori yang sesuai -->
     </div>
   </section>
 
-  <section id="contact" class="section dark">
+  <!-- CONTACT -->
+  <section id="contact" class="section">
     <h2 class="section-title">CONTACT</h2>
-    <p class="section-desc">
-      Pastikan contact mudah ditemukan. Recruiter biasanya ingin langsung tahu cara menghubungi kamu.
-    </p>
-
-    <div class="text-box">
-      <p><strong>Email:</strong> <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></p>
-      <p><strong>Instagram:</strong> <a href="YOUR_INSTAGRAM_LINK" target="_blank">YOUR_INSTAGRAM_LINK</a></p>
-      <p><strong>YouTube / Vimeo:</strong> <a href="YOUR_VIDEO_PORTFOLIO_LINK" target="_blank">YOUR_VIDEO_PORTFOLIO_LINK</a></p>
-      <p><strong>ArtStation / Behance / LinkedIn:</strong> <a href="YOUR_PROFILE_LINK" target="_blank">YOUR_PROFILE_LINK</a></p>
+    <div class="text-box" style="text-align: center;">
+      <p>Tertarik untuk bekerja sama? Hubungi saya melalui:</p>
+      <p><strong>Email:</strong> yourname@email.com</p>
+      <p><strong>Instagram:</strong> @sungjiyo</p>
+      <div class="cta" style="margin-top: 20px;">
+        <a href="mailto:emailkamu@gmail.com" class="btn btn-black">SEND EMAIL</a>
+      </div>
     </div>
   </section>
 
@@ -187,5 +172,21 @@
     <p>&copy; 2026 Sung Jiyo. All rights reserved.</p>
   </footer>
 
-</body>
-</html>
+  <!-- SCRIPT UNTUK FILTERING -->
+  <script>
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("grid-item");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        x[i].classList.add("hide");
+        if (x[i].className.indexOf(c) > -1) {
+          x[i].classList.remove("hide");
+        }
+      }
+      
+      // Mengatur status aktif pada tombol
+      var btns = document.getElementsByClassName("filter-btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+          var curren

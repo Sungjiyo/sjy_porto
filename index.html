@@ -442,30 +442,80 @@ document.addEventListener("DOMContentLoaded", function() {
   <p style="margin-top: 30px; font-size: 0.9rem; color: #666;">jiyo.animation@gmail.com</p>
 </section>
 
+ <!-- POPUP MODAL UNTUK PEMUTAR VIDEO -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
+    <div class="video-modal-container">
+      <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+      <div class="video-responsive">
+        <iframe id="videoIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT UNTUK MODAL & FILTER -->
   <script>
-    // Fungsi filter yang diperbaiki
-    function filterObjects(c) {
-      var x = document.getElementsByClassName("grid-item");
-      if (c == "all") c = "";
-      for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("show");
-        if (x[i].className.indexOf(c) > -1) {
-          x[i].classList.add("show");
-        }
-      }
-      
-      // Update active button
-      var btns = document.getElementsByClassName("filter-btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].classList.remove("active");
-      }
-      event.currentTarget.classList.add("active");
+    // Membaca ID Video YouTube
+    function getYoutubeId(url) {
+      if (!url) return null;
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      const match = url.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : null;
     }
 
-    // Panggil fungsi saat load pertama kali
-    window.onload = function() {
+    // Memutar Video dalam Popup Modal
+    function playVideo(url, event) {
+      if (event) event.preventDefault();
+      const videoId = getYoutubeId(url);
+      if (videoId) {
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+        document.getElementById('videoModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else if (url && url !== '#') {
+        window.open(url, '_blank');
+      }
+    }
+
+    // Menutup Modal & Menghentikan Video
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoIframe');
+      iframe.src = ''; 
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Menutup modal dengan tombol ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+      }
+    });
+
+    // Logika Filter Technical Works
+    function filterObjects(category, event) {
+      const items = document.querySelectorAll('#animation .grid-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      items.forEach(item => {
+        item.classList.remove('show');
+        if (category === 'all' || item.classList.contains(category)) {
+          setTimeout(() => {
+            item.classList.add('show');
+          }, 10);
+        }
+      });
+
+      if (event) {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
       filterObjects('all');
-    };
+    });
   </script>
 </body>
 </html>

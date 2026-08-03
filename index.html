@@ -7,385 +7,7 @@
   <meta name="description" content="Portfolio Sung Jiyo - 2D Animator, 2D Rigger, Poster Film, Credit Title Screenshots, dan Cut Animation." />
 
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f4f4f4;
-      color: #111;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    :root {
-      --bg: #f4f4f4;
-      --dark: #111;
-      --light: #fff;
-      --accent: #e63946;
-      --border: #111;
-      --muted: #666;
-    }
-
-    /* HEADER */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-      background: rgba(244, 244, 244, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid var(--border);
-      padding: 14px 5%;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .nav-links a {
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: #111;
-      color: #fff;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
-      align-items: center;
-      padding: 120px 5% 60px;
-      background:
-        linear-gradient(rgba(244,244,244,0.75), rgba(244,244,244,0.75)),
-        url("YOUR_HERO_BACKGROUND_IMAGE_URL");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-
-    .hero-box {
-      background: rgba(255,255,255,0.55);
-      border: 1px solid rgba(0,0,0,0.1);
-      backdrop-filter: blur(12px);
-      border-radius: 26px;
-      padding: 34px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-
-    .hero-title {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 0.92;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-    }
-
-    .hero-subtitle {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding-left: 14px;
-      border-left: 5px solid var(--accent);
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-text {
-      max-width: 620px;
-      color: #222;
-      margin-bottom: 24px;
-    }
-
-    .signature {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.4rem;
-      margin-bottom: 24px;
-    }
-
-    .cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      transition: 0.25s ease;
-      border: 2px solid #111;
-      display: inline-block;
-    }
-
-    .btn-black {
-      background: #111;
-      color: #fff;
-    }
-
-    .btn-black:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
-    }
-
-    .btn-outline:hover {
-      background: #111;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .hero-image {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-    }
-
-    .hero-image img {
-      max-width: 360px;
-      width: 100%;
-      filter: drop-shadow(0 18px 35px rgba(0,0,0,0.25));
-    }
-
-    /* SECTIONS */
-    .section {
-      padding: 80px 5%;
-      background: #fff;
-      border-top: 4px solid #111;
-    }
-
-    .section.dark {
-      background: #111;
-      color: #fff;
-      border-top-color: #e63946;
-    }
-
-    .section-title {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      letter-spacing: 1px;
-    }
-
-    .section-desc {
-      max-width: 800px;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    .dark .section-desc {
-      color: #cfcfcf;
-    }
-
-    .category-title {
-      font-family: 'Anton', sans-serif;
-      color: var(--accent);
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      margin: 34px 0 16px;
-      letter-spacing: 1px;
-    }
-
-    .mini-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .mini-nav a {
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: #fff;
-    }
-
-    .mini-nav a:hover {
-      background: #111;
-      color: #fff;
-    }
-
-    /* GRID + CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      border: 3px solid #111;
-      background: #ddd;
-      border-radius: 18px;
-      transition: 0.3s ease;
-      text-decoration: none;
-      display: block;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-    }
-
-    .poster-card {
-      aspect-ratio: 2 / 3;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .wide-card {
-      aspect-ratio: 16 / 9;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 18px;
-      color: #fff;
-      background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.05));
-      transition: 0.3s ease;
-    }
-
-    .card:hover .card-overlay {
-      background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.12));
-    }
-
-    .tag {
-      display: inline-block;
-      width: fit-content;
-      background: var(--accent);
-      color: #fff;
-      padding: 4px 9px;
-      border-radius: 6px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .card h3 {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.35rem;
-      line-height: 1.05;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      font-size: 0.85rem;
-      color: #eaeaea;
-    }
-
-    .text-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 18px;
-    }
-
-    .dark .text-box {
-      background: rgba(255,255,255,0.05);
-    }
-
-    .info-list {
-      margin-top: 12px;
-      padding-left: 18px;
-    }
-
-    .info-list li {
-      margin-bottom: 8px;
-    }
-
-    footer {
-      padding: 28px 5%;
-      text-align: center;
-      background: #fff;
-      border-top: 1px solid #111;
-      font-weight: 700;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 130px;
-        background-attachment: scroll;
-      }
-
-      .hero-box {
-        order: 2;
-      }
-
-      .hero-image {
-        order: 1;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .cta {
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -409,11 +31,11 @@
       <p class="hero-subtitle">2D Animator & 2D Character Rigger</p>
       <p class="hero-text">
         Saya adalah animator 2D yang fokus pada cut animation, character rigging, dan produksi visual untuk film,
-        series, serta konten reels. Template ini dibuat agar portfolio terlihat lebih rapi, profesional, dan mudah dibaca.
+        series, serta konten reels. Portfolio ini dibuat agar terlihat rapi, profesional, dan mudah dinavigasi.
       </p>
       <div class="signature">Sung Jiyo</div>
       <div class="cta">
-        <a href="#cut-animation" class="btn btn-black">LIHAT CUT ANIMATION</a>
+        <a href="cut-animation/index.html" class="btn btn-black">BUKA CUT ANIMATION</a>
         <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-outline">HIRE ME</a>
       </div>
     </div>
@@ -427,7 +49,7 @@
     <h2 class="section-title">ABOUT</h2>
     <p class="section-desc">
       Tulis profil singkat kamu di sini: spesialisasi, pengalaman, software yang dipakai, dan jenis proyek yang biasa kamu kerjakan.
-      Usahakan singkat tapi kuat, karena bagian ini akan dibaca cepat oleh recruiter atau studio.
+      Usahakan singkat tapi kuat.
     </p>
 
     <div class="text-box">
@@ -507,128 +129,41 @@
   <section id="cut-animation" class="section">
     <h2 class="section-title">CUT ANIMATION</h2>
     <p class="section-desc">
-      Ini bagian utama untuk animasi. Saya sarankan membaginya per kategori supaya portfolio lebih mudah dinilai.
+      Setiap kategori cut animation sudah dipisah menjadi halaman tersendiri agar portfolio lebih rapi dan mudah dinilai.
     </p>
 
     <div class="mini-nav">
-      <a href="#all-view">All View</a>
-      <a href="#frame-by-frame">Frame by Frame</a>
-      <a href="#cut-out">Cut Out</a>
-      <a href="#hybrid">Hybrid</a>
-      <a href="#japanese-style">Japanese Style</a>
-      <a href="#short-animation">Short Animation / Reels</a>
+      <a href="cut-animation/index.html">Buka Halaman Cut Animation</a>
+      <a href="cut-animation/all-view.html">All View</a>
+      <a href="cut-animation/frame-by-frame.html">Frame by Frame</a>
+      <a href="cut-animation/cut-out.html">Cut Out</a>
+      <a href="cut-animation/hybrid.html">Hybrid</a>
+      <a href="cut-animation/japanese-style.html">Japanese Style</a>
+      <a href="cut-animation/short-animation.html">Short Animation / Reels</a>
     </div>
 
-    <h3 id="all-view" class="category-title">All View</h3>
     <div class="grid">
-      <a href="YOUR_ALL_VIEW_LINK_1" target="_blank" class="card wide-card" style="background-image:url('YOUR_ALL_VIEW_IMAGE_1');">
+      <a href="cut-animation/all-view.html" class="card wide-card" style="background-image:url('YOUR_ANIMATION_THUMB_1');">
         <div class="card-overlay">
           <span class="tag">All View</span>
-          <h3>ALL VIEW PROJECT 1</h3>
-          <p>Gabungan karya terbaik untuk overview cepat.</p>
+          <h3>LIHAT ALL VIEW</h3>
+          <p>Overview karya terbaik kamu.</p>
         </div>
       </a>
 
-      <a href="YOUR_ALL_VIEW_LINK_2" target="_blank" class="card wide-card" style="background-image:url('YOUR_ALL_VIEW_IMAGE_2');">
-        <div class="card-overlay">
-          <span class="tag">All View</span>
-          <h3>ALL VIEW PROJECT 2</h3>
-          <p>Tambahkan project paling representatif di sini.</p>
-        </div>
-      </a>
-    </div>
-
-    <h3 id="frame-by-frame" class="category-title">Frame by Frame</h3>
-    <div class="grid">
-      <a href="YOUR_FBF_LINK_1" target="_blank" class="card wide-card" style="background-image:url('YOUR_FBF_IMAGE_1');">
+      <a href="cut-animation/frame-by-frame.html" class="card wide-card" style="background-image:url('YOUR_ANIMATION_THUMB_2');">
         <div class="card-overlay">
           <span class="tag">Frame by Frame</span>
-          <h3>FBF PROJECT 1</h3>
-          <p>Animasi manual yang menunjukkan kontrol timing dan acting.</p>
+          <h3>LIHAT FRAME BY FRAME</h3>
+          <p>Animasi manual dengan timing dan acting kuat.</p>
         </div>
       </a>
 
-      <a href="YOUR_FBF_LINK_2" target="_blank" class="card wide-card" style="background-image:url('YOUR_FBF_IMAGE_2');">
-        <div class="card-overlay">
-          <span class="tag">Frame by Frame</span>
-          <h3>FBF PROJECT 2</h3>
-          <p>Masukkan karya yang paling halus dan ekspresif.</p>
-        </div>
-      </a>
-    </div>
-
-    <h3 id="cut-out" class="category-title">Cut Out</h3>
-    <div class="grid">
-      <a href="YOUR_CUTOUT_LINK_1" target="_blank" class="card wide-card" style="background-image:url('YOUR_CUTOUT_IMAGE_1');">
+      <a href="cut-animation/cut-out.html" class="card wide-card" style="background-image:url('YOUR_ANIMATION_THUMB_3');">
         <div class="card-overlay">
           <span class="tag">Cut Out</span>
-          <h3>CUT OUT PROJECT 1</h3>
-          <p>Contoh rig/pose yang rapi dan efisien.</p>
-        </div>
-      </a>
-
-      <a href="YOUR_CUTOUT_LINK_2" target="_blank" class="card wide-card" style="background-image:url('YOUR_CUTOUT_IMAGE_2');">
-        <div class="card-overlay">
-          <span class="tag">Cut Out</span>
-          <h3>CUT OUT PROJECT 2</h3>
-          <p>Tambahkan contoh lain dari workflow cut out kamu.</p>
-        </div>
-      </a>
-    </div>
-
-    <h3 id="hybrid" class="category-title">Hybrid</h3>
-    <div class="grid">
-      <a href="YOUR_HYBRID_LINK_1" target="_blank" class="card wide-card" style="background-image:url('YOUR_HYBRID_IMAGE_1');">
-        <div class="card-overlay">
-          <span class="tag">Hybrid</span>
-          <h3>HYBRID PROJECT 1</h3>
-          <p>Gabungan frame by frame dan cut out.</p>
-        </div>
-      </a>
-
-      <a href="YOUR_HYBRID_LINK_2" target="_blank" class="card wide-card" style="background-image:url('YOUR_HYBRID_IMAGE_2');">
-        <div class="card-overlay">
-          <span class="tag">Hybrid</span>
-          <h3>HYBRID PROJECT 2</h3>
-          <p>Isi dengan karya hybrid terbaik kamu.</p>
-        </div>
-      </a>
-    </div>
-
-    <h3 id="japanese-style" class="category-title">Japanese Style</h3>
-    <div class="grid">
-      <a href="YOUR_JP_LINK_1" target="_blank" class="card wide-card" style="background-image:url('YOUR_JP_IMAGE_1');">
-        <div class="card-overlay">
-          <span class="tag">Japanese Style</span>
-          <h3>JAPANESE STYLE 1</h3>
-          <p>Tambahkan scene dengan rasa anime style yang kuat.</p>
-        </div>
-      </a>
-
-      <a href="YOUR_JP_LINK_2" target="_blank" class="card wide-card" style="background-image:url('YOUR_JP_IMAGE_2');">
-        <div class="card-overlay">
-          <span class="tag">Japanese Style</span>
-          <h3>JAPANESE STYLE 2</h3>
-          <p>Masukkan cut dengan posing, impact, dan speed yang bagus.</p>
-        </div>
-      </a>
-    </div>
-
-    <h3 id="short-animation" class="category-title">Short Animation / Reels</h3>
-    <div class="grid">
-      <a href="YOUR_REELS_LINK_1" target="_blank" class="card wide-card" style="background-image:url('YOUR_REELS_IMAGE_1');">
-        <div class="card-overlay">
-          <span class="tag">Reels</span>
-          <h3>SHORT ANIMATION 1</h3>
-          <p>Konten pendek untuk Instagram Reels / TikTok / shorts.</p>
-        </div>
-      </a>
-
-      <a href="YOUR_REELS_LINK_2" target="_blank" class="card wide-card" style="background-image:url('YOUR_REELS_IMAGE_2');">
-        <div class="card-overlay">
-          <span class="tag">Reels</span>
-          <h3>SHORT ANIMATION 2</h3>
-          <p>Tambahkan karya pendek yang paling menarik perhatian.</p>
+          <h3>LIHAT CUT OUT</h3>
+          <p>Rigging dan animasi cut out yang rapi.</p>
         </div>
       </a>
     </div>
@@ -647,11 +182,10 @@
       <p><strong>ArtStation / Behance / LinkedIn:</strong> <a href="YOUR_PROFILE_LINK" target="_blank">YOUR_PROFILE_LINK</a></p>
     </div>
   </section>
-</main>
 
-<footer>
-  <p>&copy; 2026 Sung Jiyo. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; 2026 Sung Jiyo. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>

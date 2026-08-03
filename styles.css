@@ -252,3 +252,21 @@ header {
     filter: brightness(1.2);
 }
 </style>
+
+/* Sembunyikan semua grid-item secara default */
+#animation .grid-item {
+  display: none; 
+}
+
+/* Munculkan hanya jika memiliki class .show */
+#animation .grid-item.show {
+  display: block;
+}
+
+/* Memastikan grid tetap rapi saat difilter */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+

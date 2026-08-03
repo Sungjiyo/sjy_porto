@@ -3,199 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sung Jiyo | 2D Animator & Rigger Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <title>SUNARIYO | 2D Animation Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* CSS Tambahan untuk Filtering */
-    .filter-btn {
-      padding: 10px 20px;
-      margin: 5px;
-      border: 1px solid #333;
-      background: none;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s;
-      font-family: 'Poppins', sans-serif;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-    }
-    .filter-btn.active, .filter-btn:hover {
-      background: #fff;
-      color: #000;
-    }
-    .grid-item {
-      display: block; /* Default tampil */
-    }
-    .grid-item.hide {
-      display: none; /* Sembunyikan yang tidak dipilih */
-    }
-  </style>
 </head>
 <body>
 
   <header>
-    <nav>
-      <div class="logo">SUNARIYO</div>
-      <ul class="nav-links">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#filmography">FILMOGRAPHY</a></li>
-        <li><a href="#credits">CREDITS</a></li>
-        <li><a href="#portfolio">ANIMATION</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
+    <div class="logo">SUNARIYO</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#releases">Releases</a></li>
+      <li><a href="#animation">Works</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </header>
 
-  <!-- HERO SECTION -->
-  <main id="home" class="hero">
-    <div class="hero-box">
-      <h1 class="hero-title">SUNARIYO</h1>
-      <p class="hero-subtitle">2D Animator & 2D Character Rigger</p>
-      <div class="signature">Sung Jiyo</div>
-      <div class="cta">
-        <a href="#portfolio" class="btn btn-black">LIHAT KARYA</a>
-        <a href="mailto:emailkamu@gmail.com" class="btn btn-outline">HIRE ME</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="URL_FOTO_KARAKTER_KAMU" alt="Sung Jiyo">
-    </div>
-  </main>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2 class="section-title">ABOUT</h2>
-    <div class="text-box">
-      <p>Saya adalah animator 2D yang fokus pada <strong>cut-out animation</strong> dan <strong>character rigging</strong>. Berpengalaman dalam menangani produksi film layar lebar, series, hingga konten visual untuk media sosial.</p>
-      <p><strong>Tools:</strong> Toon Boom Harmony, Photoshop, After Effects.</p>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Animator & Rigger</p>
+      <h1 class="hero-title">SUNG<br>JIYO</h1>
+      <p style="color: #888; margin-bottom: 40px;">Spesialisasi dalam Cut-out Animation dan Character Rigging untuk industri perfilman global.</p>
+      <a href="#animation" class="filter-btn" style="color: #fff; border-bottom: 2px solid #fff; padding-bottom: 5px; text-decoration: none;">EXPLORE WORKS</a>
     </div>
   </section>
 
-  <!-- FILMOGRAPHY (Dulu Poster Film) -->
-  <section id="filmography" class="section dark">
-    <h2 class="section-title">FILMOGRAPHY</h2>
-    <p class="section-desc">Kumpulan project film, series, dan animasi pendek yang telah tayang secara resmi.</p>
-    <div class="grid">
+  <section id="about" class="section">
+    <div class="section-header">
+      <h2 class="section-title">THE ARTIST</h2>
+    </div>
+    <div style="max-width: 800px; font-size: 1.2rem; color: #ccc;">
+      <p>Bekerja di persimpangan antara teknis rigging yang kompleks dan estetika animasi yang halus. Berpengalaman menangani pipeline produksi untuk proyek film layar lebar dan seri animasi original.</p>
+    </div>
+  </section>
+
+  <!-- OFFICIAL RELEASES -->
+  <section id="releases" class="section">
+    <div class="section-header">
+      <h2 class="section-title">OFFICIAL RELEASES</h2>
+    </div>
+    <div class="grid-container">
       <!-- Item 1 -->
-      <div class="card poster-card" style="background-image:url('POSTER_1');">
-        <div class="card-overlay">
-          <span class="tag">Feature Film</span>
-          <h3>JUDUL FILM 1</h3>
-          <p>Role: 2D Animator (2023)</p>
+      <div class="work-item">
+        <img src="YOUR_POSTER_1.jpg" alt="Film 1">
+        <div class="work-overlay">
+          <small>FEATURE FILM</small>
+          <h3>PROJECT TITLE ONE</h3>
         </div>
       </div>
       <!-- Item 2 -->
-      <div class="card poster-card" style="background-image:url('POSTER_2');">
-        <div class="card-overlay">
-          <span class="tag">TV Series</span>
-          <h3>JUDUL SERIES</h3>
-          <p>Role: Lead Rigger</p>
+      <div class="work-item">
+        <img src="YOUR_POSTER_2.jpg" alt="Film 2">
+        <div class="work-overlay">
+          <small>SERIES</small>
+          <h3>PROJECT TITLE TWO</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CREDIT TITLES -->
-  <section id="credits" class="section">
-    <h2 class="section-title">CREDIT TITLES</h2>
-    <p class="section-desc">Bukti keterlibatan dalam tim produksi produksi resmi.</p>
-    <div class="grid">
-      <div class="card wide-card" style="background-image:url('CREDIT_IMAGE_1');">
-        <div class="card-overlay"><h3>Movie Name Credit</h3></div>
+  <!-- ANIMATION SHOWCASE WITH FILTER -->
+  <section id="animation" class="section" style="background-color: #050505;">
+    <div class="section-header">
+      <h2 class="section-title">WORKS</h2>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterObjects('all')">All</button>
+      <button class="filter-btn" onclick="filterObjects('fbf')">Frame by Frame</button>
+      <button class="filter-btn" onclick="filterObjects('cutout')">Cut Out</button>
+      <button class="filter-btn" onclick="filterObjects('japan')">Japanese Style</button>
+    </div>
+
+    <div class="grid-container">
+      <!-- Kategori: FBF -->
+      <div class="grid-item fbf work-item">
+        <img src="FBF_IMAGE_1.jpg" alt="FBF 1">
+        <div class="work-overlay"><h3>Action Sequence</h3></div>
       </div>
-      <div class="card wide-card" style="background-image:url('CREDIT_IMAGE_2');">
-        <div class="card-overlay"><h3>Series Name Credit</h3></div>
+      <div class="grid-item fbf work-item">
+        <img src="FBF_IMAGE_2.jpg" alt="FBF 2">
+        <div class="work-overlay"><h3>Character Acting</h3></div>
+      </div>
+
+      <!-- Kategori: Cutout -->
+      <div class="grid-item cutout work-item">
+        <img src="CO_IMAGE_1.jpg" alt="CO 1">
+        <div class="work-overlay"><h3>Character Rigging Move</h3></div>
+      </div>
+      <div class="grid-item cutout work-item">
+        <img src="CO_IMAGE_2.jpg" alt="CO 2">
+        <div class="work-overlay"><h3>Body Mechanics</h3></div>
+      </div>
+
+      <!-- Kategori: Japan -->
+      <div class="grid-item japan work-item">
+        <img src="JP_IMAGE_1.jpg" alt="JP 1">
+        <div class="work-overlay"><h3>Anime Style Cut</h3></div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO / CUT ANIMATION (DENGAN FILTER) -->
-  <section id="portfolio" class="section dark">
-    <h2 class="section-title">CUT ANIMATION</h2>
-    <p class="section-desc">Koleksi cut animasi berdasarkan teknik dan gaya.</p>
-
-    <div class="mini-nav">
-      <button class="filter-btn active" onclick="filterSelection('all')">ALL VIEW</button>
-      <button class="filter-btn" onclick="filterSelection('frame')">FRAME BY FRAME</button>
-      <button class="filter-btn" onclick="filterSelection('cutout')">CUT OUT</button>
-      <button class="filter-btn" onclick="filterSelection('hybrid')">HYBRID</button>
-      <button class="filter-btn" onclick="filterSelection('japan')">JAPANESE STYLE</button>
-      <button class="filter-btn" onclick="filterSelection('short')">SHORT/REELS</button>
-    </div>
-
-    <div class="grid">
-      <!-- Contoh Item Frame by Frame -->
-      <div class="grid-item frame card wide-card" style="background-image:url('THUMB_1');">
-        <div class="card-overlay">
-          <span class="tag">Frame by Frame</span>
-          <h3>Character Action</h3>
-        </div>
-      </div>
-
-      <!-- Contoh Item Cut Out -->
-      <div class="grid-item cutout card wide-card" style="background-image:url('THUMB_2');">
-        <div class="card-overlay">
-          <span class="tag">Cut Out</span>
-          <h3>Rigged Character Walk</h3>
-        </div>
-      </div>
-
-      <!-- Contoh Item Japanese Style -->
-      <div class="grid-item japan card wide-card" style="background-image:url('THUMB_3');">
-        <div class="card-overlay">
-          <span class="tag">Japanese Style</span>
-          <h3>Anime Style Cut</h3>
-        </div>
-      </div>
-      
-      <!-- Tambahkan item lainnya dengan class kategori yang sesuai -->
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2 class="section-title">CONTACT</h2>
-    <div class="text-box" style="text-align: center;">
-      <p>Tertarik untuk bekerja sama? Hubungi saya melalui:</p>
-      <p><strong>Email:</strong> yourname@email.com</p>
-      <p><strong>Instagram:</strong> @sungjiyo</p>
-      <div class="cta" style="margin-top: 20px;">
-        <a href="mailto:emailkamu@gmail.com" class="btn btn-black">SEND EMAIL</a>
-      </div>
+  <section id="contact" class="section" style="text-align: center;">
+    <h2 class="hero-title" style="font-size: 5vw;">LET'S TALK</h2>
+    <p>sungjiyo@email.com</p>
+    <div style="margin-top: 50px;">
+      <a href="mailto:email@kamu.com" class="filter-btn" style="font-size: 1.5rem; color: #fff;">SAY HELLO</a>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 Sung Jiyo. All rights reserved.</p>
+    <p>&copy; 2026 SUNARIYO STUDIO. ALL RIGHTS RESERVED.</p>
   </footer>
 
-  <!-- SCRIPT UNTUK FILTERING -->
   <script>
-    function filterSelection(c) {
+    // Filtering Logic
+    filterObjects('all');
+    function filterObjects(c) {
       var x, i;
       x = document.getElementsByClassName("grid-item");
       if (c == "all") c = "";
       for (i = 0; i < x.length; i++) {
-        x[i].classList.add("hide");
-        if (x[i].className.indexOf(c) > -1) {
-          x[i].classList.remove("hide");
-        }
+        x[i].classList.remove("show");
+        if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
       }
-      
-      // Mengatur status aktif pada tombol
+      // Active Button State
       var btns = document.getElementsByClassName("filter-btn");
       for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function(){
           var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
+          if (current.length > 0) current[0].className = current[0].className.replace(" active", "");
           this.className += " active";
         });
       }
     }
   </script>
-
 </body>
 </html>

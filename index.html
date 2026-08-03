@@ -5,6 +5,20 @@
   <title>SUNARIYO | 2D Animator & Rigger Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Tambahan CSS agar filter & link berfungsi maksimal */
+    .grid-item { display: none; } /* Sembunyikan semua item secara default */
+    .grid-item.show { display: block; } /* Tampilkan hanya yang difilter */
+    
+    .work-item { cursor: pointer; text-decoration: none; color: inherit; }
+    .work-item:hover img { transform: scale(1.05); transition: 0.3s; }
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    
+    /* Memastikan overlay tetap rapi saat dibungkus link */
+    .work-item { position: relative; overflow: hidden; display: block; }
+    .work-overlay { transition: 0.3s ease; }
+    .work-item:hover .work-overlay { background: rgba(0,0,0,0.8); }
+  </style>
 </head>
 <body>
 
@@ -34,7 +48,7 @@
     </div>
   </section>
 
-  <!-- ABOUT & SKILLS (Dari CV) -->
+  <!-- ABOUT & SKILLS -->
   <section id="about" class="section">
     <div class="section-header">
       <h2 class="section-title">PROFILE</h2>
@@ -66,37 +80,42 @@
     </div>
   </section>
 
-  <!-- OFFICIAL RELEASES (Daftar Project Besar CV) -->
+  <!-- OFFICIAL RELEASES -->
   <section id="releases" class="section" style="background: #080808;">
     <div class="section-header">
       <h2 class="section-title">OFFICIAL RELEASES</h2>
     </div>
     <div class="grid-container">
-      <div class="work-item">
-        <img src="https://via.placeholder.com/800x450" alt="Si Juki">
+      <!-- Item: Si Juki -->
+      <a href="LINK_VIDEO_SI_JUKI_DISINI" target="_blank" class="work-item">
+        <img src="https://via.placeholder.com/800x450/111/fff?text=Si+Juki" alt="Si Juki">
         <div class="work-overlay">
           <small>FEATURE FILM</small>
           <h3>Si Juki The Movie: Harta Pulau Monyet</h3>
         </div>
-      </div>
-      <div class="work-item">
-        <img src="https://via.placeholder.com/800x450" alt="Panji Tengkorak">
+      </a>
+
+      <!-- Item: Panji Tengkorak -->
+      <a href="LINK_VIDEO_PANJI_DISINI" target="_blank" class="work-item">
+        <img src="https://via.placeholder.com/800x450/111/fff?text=Panji+Tengkorak" alt="Panji Tengkorak">
         <div class="work-overlay">
           <small>FEATURE FILM</small>
           <h3>Panji Tengkorak (Movie)</h3>
         </div>
-      </div>
-      <div class="work-item">
-        <img src="https://via.placeholder.com/800x450" alt="Warkop DKI">
+      </a>
+
+      <!-- Item: Warkop DKI (Update Baru) -->
+      <a href="https://www.youtube.com/results?search_query=warkop+dki+kartun" target="_blank" class="work-item">
+        <img src="https://via.placeholder.com/800x450/900/fff?text=Warkop+DKI+Kartun" alt="Warkop DKI">
         <div class="work-overlay">
-          <small>SERIES</small>
-          <h3>Warkop DKI Kartun</h3>
+          <small>OFFICIAL SERIES</small>
+          <h3>Short Animation - Warkop DKI Kartun</h3>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
-  <!-- WORKS / CUT ANIMATION -->
+  <!-- WORKS / TECHNICAL WORKS -->
   <section id="animation" class="section">
     <div class="section-header">
       <h2 class="section-title">TECHNICAL WORKS</h2>
@@ -104,22 +123,35 @@
 
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filterObjects('all')">All</button>
+      <button class="filter-btn" onclick="filterObjects('showreel')">Showreels</button>
       <button class="filter-btn" onclick="filterObjects('fbf')">Frame by Frame</button>
       <button class="filter-btn" onclick="filterObjects('cutout')">Cut Out</button>
       <button class="filter-btn" onclick="filterObjects('hybrid')">Hybrid</button>
     </div>
 
     <div class="grid-container">
+      
+      <!-- ITEM: SHOWREEL (Update Baru) -->
+      <a href="LINK_SHOWREEL_ANDA_DISINI" target="_blank" class="grid-item showreel work-item">
+        <img src="https://via.placeholder.com/800x450/222/fff?text=Animation+Showreel" alt="Showreel">
+        <div class="work-overlay">
+          <small>2024</small>
+          <h3>2D Animation Showreel</h3>
+        </div>
+      </a>
+
       <!-- Contoh item fbf -->
-      <div class="grid-item fbf work-item">
+      <a href="#" class="grid-item fbf work-item">
         <img src="https://via.placeholder.com/800x450" alt="Work">
         <div class="work-overlay"><h3>Action Sequence</h3></div>
-      </div>
+      </a>
+
       <!-- Contoh item cutout -->
-      <div class="grid-item cutout work-item">
+      <a href="#" class="grid-item cutout work-item">
         <img src="https://via.placeholder.com/800x450" alt="Work">
         <div class="work-overlay"><h3>Rigging Showcase</h3></div>
-      </div>
+      </a>
+
     </div>
   </section>
 
@@ -134,23 +166,29 @@
   </section>
 
   <script>
-    filterObjects('all');
+    // Fungsi filter yang diperbaiki
     function filterObjects(c) {
       var x = document.getElementsByClassName("grid-item");
       if (c == "all") c = "";
       for (var i = 0; i < x.length; i++) {
         x[i].classList.remove("show");
-        if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
+        if (x[i].className.indexOf(c) > -1) {
+          x[i].classList.add("show");
+        }
       }
+      
+      // Update active button
       var btns = document.getElementsByClassName("filter-btn");
       for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function(){
-          var current = document.getElementsByClassName("active");
-          if (current.length > 0) current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
+        btns[i].classList.remove("active");
       }
+      event.currentTarget.classList.add("active");
     }
+
+    // Panggil fungsi saat load pertama kali
+    window.onload = function() {
+      filterObjects('all');
+    };
   </script>
 </body>
 </html>

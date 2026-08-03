@@ -6,38 +6,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* CSS Tambahan untuk Filter dan Credits */
-    .grid-item { display: none; }
-    .grid-item.show { display: block; }
+    /* Tambahan CSS agar filter & link berfungsi maksimal */
+    .grid-item { display: none; } /* Sembunyikan semua item secara default */
+    .grid-item.show { display: block; } /* Tampilkan hanya yang difilter */
     
-    .work-item { cursor: pointer; text-decoration: none; color: inherit; position: relative; overflow: hidden; display: block; }
+    .work-item { cursor: pointer; text-decoration: none; color: inherit; }
     .work-item:hover img { transform: scale(1.05); transition: 0.3s; }
     .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     
-    /* Styling Section Credits */
-    .credits-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .credit-row {
-      display: grid;
-      grid-template-columns: 120px 1fr 200px;
-      padding: 15px 0;
-      border-bottom: 1px solid #222;
-      transition: 0.3s;
-    }
-    .credit-row:hover { background: #111; padding-left: 10px; }
-    .credit-year { color: #555; font-weight: 600; }
-    .credit-title { color: #fff; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-    .credit-role { color: #f39c12; text-align: right; font-size: 0.9rem; }
-
-    @media (max-width: 600px) {
-      .credit-row { grid-template-columns: 1fr; gap: 5px; text-align: left; }
-      .credit-role { text-align: left; }
-    }
+    /* Memastikan overlay tetap rapi saat dibungkus link */
+    .work-item { position: relative; overflow: hidden; display: block; }
+    .work-overlay { transition: 0.3s ease; }
+    .work-item:hover .work-overlay { background: rgba(0,0,0,0.8); }
   </style>
 </head>
 <body>
@@ -49,82 +29,126 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#releases">Releases</a></li>
-        <li><a href="#credits">Credits</a></li> <!-- Link baru -->
+        <li><a href="#proofs">Credits</a></li>
         <li><a href="#animation">Works</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Bagian Hero & About tetap sama seperti sebelumnya -->
   <section id="home" class="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p style="letter-spacing: 5px; color: #ccc;">2D ANIMATOR | CHARACTER RIGGER</p>
       <h1 class="hero-title">SUNARIYO</h1>
+      <p style="max-width: 500px; margin-top: 20px; color: #aaa;">
+        5+ years of experience in feature films and animated series. 
+        Specialized in Toon Boom Harmony workflow.
+      </p>
     </div>
   </section>
 
-  <!-- ... (Section About bisa disisipkan di sini) ... -->
-
-  <!-- SECTION CREDITS (Filmografi) -->
-  <section id="credits" class="section" style="background: #000;">
+  <!-- ABOUT & SKILLS -->
+  <section id="about" class="section">
     <div class="section-header">
-      <h2 class="section-title">FILMOGRAPHY & CREDITS</h2>
+      <h2 class="section-title">PROFILE</h2>
     </div>
-    
-    <div class="credits-container">
-      <!-- Item Credit 1 -->
-      <div class="credit-row">
-        <div class="credit-year">2024</div>
-        <div class="credit-title">Si Juki The Movie: Harta Pulau Monyet</div>
-        <div class="credit-role">Character Rigger / 2D Animator</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+      <div>
+        <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 20px;">
+          Detail-oriented 2D Animator and Character Rigger. Skilled in cut-out, traditional, and hybrid animation. 
+          Proven leadership as Person in Charge (PIC) to deliver high-quality projects on schedule.
+        </p>
+        <h3>Tools:</h3>
+        <div class="skills-container">
+          <span class="skill-tag">Toon Boom Harmony</span>
+          <span class="skill-tag">Clip Studio Paint EX</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">Blender</span>
+          <span class="skill-tag">Paint Tool SAI</span>
+        </div>
       </div>
-
-      <!-- Item Credit 2 -->
-      <div class="credit-row">
-        <div class="credit-year">2023</div>
-        <div class="credit-title">Panji Tengkorak (Feature Film)</div>
-        <div class="credit-role">2D Animator</div>
+      <div>
+        <h3>Key Expertise:</h3>
+        <ul style="list-style: none; color: #888; margin-top: 10px;">
+          <li>• Full Animation Pipeline (Keypose to Coloring)</li>
+          <li>• Japanese & Western Animation Pipeline</li>
+          <li>• Advanced Character Rigging</li>
+          <li>• Project Leadership (PIC)</li>
+        </ul>
       </div>
-
-      <!-- Item Credit 3 -->
-      <div class="credit-row">
-        <div class="credit-year">2021-2022</div>
-        <div class="credit-title">Warkop DKI Kartun (Series)</div>
-        <div class="credit-role">2D Animator / PIC</div>
-      </div>
-
-      <!-- Item Credit 4 -->
-      <div class="credit-row">
-        <div class="credit-year">2020</div>
-        <div class="credit-title">Project Name Placeholder</div>
-        <div class="credit-role">Character Rigger</div>
-      </div>
-
-      <!-- Tambahkan proyek lainnya di sini sesuai CV -->
     </div>
   </section>
 
-  <!-- OFFICIAL RELEASES (Tampilan Visual) -->
+  <!-- OFFICIAL RELEASES -->
   <section id="releases" class="section" style="background: #080808;">
     <div class="section-header">
       <h2 class="section-title">OFFICIAL RELEASES</h2>
     </div>
     <div class="grid-container">
-      <a href="LINK_YOUTUBE_WAKROP" target="_blank" class="work-item">
+      <!-- Item: Si Juki -->
+      <a href="LINK_VIDEO_SI_JUKI_DISINI" target="_blank" class="work-item">
+        <img src="https://via.placeholder.com/800x450/111/fff?text=Si+Juki" alt="Si Juki">
+        <div class="work-overlay">
+          <small>FEATURE FILM</small>
+          <h3>Si Juki The Movie: Harta Pulau Monyet</h3>
+        </div>
+      </a>
+
+      <!-- Item: Panji Tengkorak -->
+      <a href="LINK_VIDEO_PANJI_DISINI" target="_blank" class="work-item">
+        <img src="https://via.placeholder.com/800x450/111/fff?text=Panji+Tengkorak" alt="Panji Tengkorak">
+        <div class="work-overlay">
+          <small>FEATURE FILM</small>
+          <h3>Panji Tengkorak (Movie)</h3>
+        </div>
+      </a>
+
+      <!-- Item: Warkop DKI (Update Baru) -->
+      <a href="https://www.youtube.com/results?search_query=warkop+dki+kartun" target="_blank" class="work-item">
         <img src="https://via.placeholder.com/800x450/900/fff?text=Warkop+DKI+Kartun" alt="Warkop DKI">
         <div class="work-overlay">
           <small>OFFICIAL SERIES</small>
           <h3>Short Animation - Warkop DKI Kartun</h3>
         </div>
       </a>
-      <!-- Item lainnya... -->
     </div>
   </section>
 
-  <!-- WORKS / TECHNICAL WORKS (Dengan Filter Showreel) -->
+  <!-- SECTION BARU: CREDIT PROOFS -->
+<section id="proofs" class="section" style="background: #050505;">
+  <div class="section-header">
+    <h2 class="section-title">NAME IN CREDITS</h2>
+    <p style="color: #666;">Proof of professional involvement in major productions</p>
+  </div>
+
+  <div class="credit-sc-container">
+    
+    <!-- Bukti 1: Warkop DKI -->
+    <div class="sc-item">
+      <img src="URL_SCREENSHOT_NAMA_LU_DI_WARKOP" alt="Credit Warkop DKI">
+      <div class="sc-caption">Warkop DKI Kartun - Animator</div>
+    </div>
+
+    <!-- Bukti 2: Si Juki -->
+    <div class="sc-item">
+      <img src="URL_SCREENSHOT_NAMA_LU_DI_JUKI" alt="Credit Si Juki">
+      <div class="sc-caption">Si Juki: HPM - Rigger</div>
+    </div>
+
+    <!-- Bukti 3: Panji Tengkorak -->
+    <div class="sc-item">
+      <img src="URL_SCREENSHOT_NAMA_LU_DI_PANJI" alt="Credit Panji Tengkorak">
+      <div class="sc-caption">Panji Tengkorak - 2D Animator</div>
+    </div>
+
+    <!-- Tambahkan screenshot lainnya di sini -->
+
+  </div>
+</section>
+  
+  <!-- WORKS / TECHNICAL WORKS -->
   <section id="animation" class="section">
     <div class="section-header">
       <h2 class="section-title">TECHNICAL WORKS</h2>
@@ -139,35 +163,54 @@
     </div>
 
     <div class="grid-container">
-      <!-- Item Showreel -->
-      <a href="LINK_SHOWREEL_ANDA" target="_blank" class="grid-item showreel work-item">
-        <img src="https://via.placeholder.com/800x450/222/fff?text=My+Showreel" alt="Showreel">
-        <div class="work-overlay"><h3>Animation Showreel</h3></div>
-      </a>
       
-      <!-- Item FBF -->
-      <div class="grid-item fbf work-item">
+      <!-- ITEM: SHOWREEL (Update Baru) -->
+      <a href="LINK_SHOWREEL_ANDA_DISINI" target="_blank" class="grid-item showreel work-item">
+        <img src="https://via.placeholder.com/800x450/222/fff?text=Animation+Showreel" alt="Showreel">
+        <div class="work-overlay">
+          <small>2024</small>
+          <h3>2D Animation Showreel</h3>
+        </div>
+      </a>
+
+      <!-- Contoh item fbf -->
+      <a href="#" class="grid-item fbf work-item">
         <img src="https://via.placeholder.com/800x450" alt="Work">
         <div class="work-overlay"><h3>Action Sequence</h3></div>
-      </div>
+      </a>
+
+      <!-- Contoh item cutout -->
+      <a href="#" class="grid-item cutout work-item">
+        <img src="https://via.placeholder.com/800x450" alt="Work">
+        <div class="work-overlay"><h3>Rigging Showcase</h3></div>
+      </a>
+
     </div>
   </section>
 
-  <!-- CONTACT (Footer) -->
+  <!-- CONTACT -->
   <section id="contact" class="section" style="text-align: center; background: #000;">
     <h2 class="hero-title" style="font-size: 5vw;">CONTACT</h2>
     <p style="margin-top: 20px; letter-spacing: 2px;">jiyo.animation@gmail.com</p>
+    <div style="margin-top: 40px;">
+      <a href="https://www.linkedin.com/in/sunariyo-yoyo" target="_blank" class="skill-tag" style="text-decoration: none; color: #fff;">LinkedIn</a>
+      <a href="mailto:jiyo.animation@gmail.com" class="skill-tag" style="text-decoration: none; color: #fff; margin-left: 10px;">Email Me</a>
+    </div>
   </section>
 
   <script>
+    // Fungsi filter yang diperbaiki
     function filterObjects(c) {
       var x = document.getElementsByClassName("grid-item");
       if (c == "all") c = "";
       for (var i = 0; i < x.length; i++) {
         x[i].classList.remove("show");
-        if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
+        if (x[i].className.indexOf(c) > -1) {
+          x[i].classList.add("show");
+        }
       }
       
+      // Update active button
       var btns = document.getElementsByClassName("filter-btn");
       for (var i = 0; i < btns.length; i++) {
         btns[i].classList.remove("active");
@@ -175,6 +218,7 @@
       event.currentTarget.classList.add("active");
     }
 
+    // Panggil fungsi saat load pertama kali
     window.onload = function() {
       filterObjects('all');
     };
